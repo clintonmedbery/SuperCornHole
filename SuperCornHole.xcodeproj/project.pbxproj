@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85B1BE669B2000A4765 /* AppDelegate.swift */; };
+		88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB85D1BE669B2000A4765 /* GameScene.sks */; };
+		88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85F1BE669B2000A4765 /* GameScene.swift */; };
+		88DEB8621BE669B2000A4765 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB8611BE669B2000A4765 /* GameViewController.swift */; };
+		88DEB8641BE669B2000A4765 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB8631BE669B2000A4765 /* Game.xcassets */; };
+		88DEB8671BE669B2000A4765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB8651BE669B2000A4765 /* Main.storyboard */; };
+		88DEB8691BE669B2000A4765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB8681BE669B2000A4765 /* Assets.xcassets */; };
+		88DEB8741BE669B2000A4765 /* SuperCornHoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB8731BE669B2000A4765 /* SuperCornHoleTests.swift */; };
+		88DEB87F1BE669B2000A4765 /* SuperCornHoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB87E1BE669B2000A4765 /* SuperCornHoleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88DEB8701BE669B2000A4765 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88DEB8501BE669B2000A4765 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88DEB8571BE669B2000A4765;
+			remoteInfo = SuperCornHole;
+		};
+		88DEB87B1BE669B2000A4765 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88DEB8501BE669B2000A4765 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88DEB8571BE669B2000A4765;
+			remoteInfo = SuperCornHole;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		88DEB8581BE669B2000A4765 /* SuperCornHole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCornHole.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DEB85B1BE669B2000A4765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88DEB85D1BE669B2000A4765 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		88DEB85F1BE669B2000A4765 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		88DEB8611BE669B2000A4765 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		88DEB8631BE669B2000A4765 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		88DEB8661BE669B2000A4765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88DEB8681BE669B2000A4765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88DEB86A1BE669B2000A4765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88DEB86F1BE669B2000A4765 /* SuperCornHoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCornHoleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DEB8731BE669B2000A4765 /* SuperCornHoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCornHoleTests.swift; sourceTree = "<group>"; };
+		88DEB8751BE669B2000A4765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88DEB87A1BE669B2000A4765 /* SuperCornHoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCornHoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DEB87E1BE669B2000A4765 /* SuperCornHoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCornHoleUITests.swift; sourceTree = "<group>"; };
+		88DEB8801BE669B2000A4765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88DEB8551BE669B2000A4765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB86C1BE669B2000A4765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB8771BE669B2000A4765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88DEB84F1BE669B2000A4765 = {
+			isa = PBXGroup;
+			children = (
+				88DEB85A1BE669B2000A4765 /* SuperCornHole */,
+				88DEB8721BE669B2000A4765 /* SuperCornHoleTests */,
+				88DEB87D1BE669B2000A4765 /* SuperCornHoleUITests */,
+				88DEB8591BE669B2000A4765 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88DEB8591BE669B2000A4765 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88DEB8581BE669B2000A4765 /* SuperCornHole.app */,
+				88DEB86F1BE669B2000A4765 /* SuperCornHoleTests.xctest */,
+				88DEB87A1BE669B2000A4765 /* SuperCornHoleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88DEB85A1BE669B2000A4765 /* SuperCornHole */ = {
+			isa = PBXGroup;
+			children = (
+				88DEB85B1BE669B2000A4765 /* AppDelegate.swift */,
+				88DEB85D1BE669B2000A4765 /* GameScene.sks */,
+				88DEB85F1BE669B2000A4765 /* GameScene.swift */,
+				88DEB8611BE669B2000A4765 /* GameViewController.swift */,
+				88DEB8631BE669B2000A4765 /* Game.xcassets */,
+				88DEB8651BE669B2000A4765 /* Main.storyboard */,
+				88DEB8681BE669B2000A4765 /* Assets.xcassets */,
+				88DEB86A1BE669B2000A4765 /* Info.plist */,
+			);
+			path = SuperCornHole;
+			sourceTree = "<group>";
+		};
+		88DEB8721BE669B2000A4765 /* SuperCornHoleTests */ = {
+			isa = PBXGroup;
+			children = (
+				88DEB8731BE669B2000A4765 /* SuperCornHoleTests.swift */,
+				88DEB8751BE669B2000A4765 /* Info.plist */,
+			);
+			path = SuperCornHoleTests;
+			sourceTree = "<group>";
+		};
+		88DEB87D1BE669B2000A4765 /* SuperCornHoleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88DEB87E1BE669B2000A4765 /* SuperCornHoleUITests.swift */,
+				88DEB8801BE669B2000A4765 /* Info.plist */,
+			);
+			path = SuperCornHoleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88DEB8571BE669B2000A4765 /* SuperCornHole */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88DEB8831BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHole" */;
+			buildPhases = (
+				88DEB8541BE669B2000A4765 /* Sources */,
+				88DEB8551BE669B2000A4765 /* Frameworks */,
+				88DEB8561BE669B2000A4765 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperCornHole;
+			productName = SuperCornHole;
+			productReference = 88DEB8581BE669B2000A4765 /* SuperCornHole.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88DEB86E1BE669B2000A4765 /* SuperCornHoleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88DEB8861BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHoleTests" */;
+			buildPhases = (
+				88DEB86B1BE669B2000A4765 /* Sources */,
+				88DEB86C1BE669B2000A4765 /* Frameworks */,
+				88DEB86D1BE669B2000A4765 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88DEB8711BE669B2000A4765 /* PBXTargetDependency */,
+			);
+			name = SuperCornHoleTests;
+			productName = SuperCornHoleTests;
+			productReference = 88DEB86F1BE669B2000A4765 /* SuperCornHoleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88DEB8791BE669B2000A4765 /* SuperCornHoleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88DEB8891BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHoleUITests" */;
+			buildPhases = (
+				88DEB8761BE669B2000A4765 /* Sources */,
+				88DEB8771BE669B2000A4765 /* Frameworks */,
+				88DEB8781BE669B2000A4765 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88DEB87C1BE669B2000A4765 /* PBXTargetDependency */,
+			);
+			name = SuperCornHoleUITests;
+			productName = SuperCornHoleUITests;
+			productReference = 88DEB87A1BE669B2000A4765 /* SuperCornHoleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88DEB8501BE669B2000A4765 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Programadores Sans Frontieres";
+				TargetAttributes = {
+					88DEB8571BE669B2000A4765 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					88DEB86E1BE669B2000A4765 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 88DEB8571BE669B2000A4765;
+					};
+					88DEB8791BE669B2000A4765 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 88DEB8571BE669B2000A4765;
+					};
+				};
+			};
+			buildConfigurationList = 88DEB8531BE669B2000A4765 /* Build configuration list for PBXProject "SuperCornHole" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88DEB84F1BE669B2000A4765;
+			productRefGroup = 88DEB8591BE669B2000A4765 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88DEB8571BE669B2000A4765 /* SuperCornHole */,
+				88DEB86E1BE669B2000A4765 /* SuperCornHoleTests */,
+				88DEB8791BE669B2000A4765 /* SuperCornHoleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88DEB8561BE669B2000A4765 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88DEB8671BE669B2000A4765 /* Main.storyboard in Resources */,
+				88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */,
+				88DEB8691BE669B2000A4765 /* Assets.xcassets in Resources */,
+				88DEB8641BE669B2000A4765 /* Game.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB86D1BE669B2000A4765 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB8781BE669B2000A4765 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88DEB8541BE669B2000A4765 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */,
+				88DEB8621BE669B2000A4765 /* GameViewController.swift in Sources */,
+				88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB86B1BE669B2000A4765 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88DEB8741BE669B2000A4765 /* SuperCornHoleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88DEB8761BE669B2000A4765 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88DEB87F1BE669B2000A4765 /* SuperCornHoleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88DEB8711BE669B2000A4765 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88DEB8571BE669B2000A4765 /* SuperCornHole */;
+			targetProxy = 88DEB8701BE669B2000A4765 /* PBXContainerItemProxy */;
+		};
+		88DEB87C1BE669B2000A4765 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88DEB8571BE669B2000A4765 /* SuperCornHole */;
+			targetProxy = 88DEB87B1BE669B2000A4765 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88DEB8651BE669B2000A4765 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88DEB8661BE669B2000A4765 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88DEB8811BE669B2000A4765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		88DEB8821BE669B2000A4765 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88DEB8841BE669B2000A4765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SuperCornHole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88DEB8851BE669B2000A4765 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SuperCornHole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		88DEB8871BE669B2000A4765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SuperCornHoleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHoleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCornHole.app/SuperCornHole";
+			};
+			name = Debug;
+		};
+		88DEB8881BE669B2000A4765 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SuperCornHoleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHoleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCornHole.app/SuperCornHole";
+			};
+			name = Release;
+		};
+		88DEB88A1BE669B2000A4765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SuperCornHoleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHoleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperCornHole;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		88DEB88B1BE669B2000A4765 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SuperCornHoleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHoleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperCornHole;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88DEB8531BE669B2000A4765 /* Build configuration list for PBXProject "SuperCornHole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DEB8811BE669B2000A4765 /* Debug */,
+				88DEB8821BE669B2000A4765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88DEB8831BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DEB8841BE669B2000A4765 /* Debug */,
+				88DEB8851BE669B2000A4765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88DEB8861BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHoleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DEB8871BE669B2000A4765 /* Debug */,
+				88DEB8881BE669B2000A4765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88DEB8891BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHoleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DEB88A1BE669B2000A4765 /* Debug */,
+				88DEB88B1BE669B2000A4765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88DEB8501BE669B2000A4765 /* Project object */;
+}
