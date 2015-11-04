@@ -10,6 +10,9 @@
 		8811D8EE1BE6F18900D08FFA /* BeanBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811D8ED1BE6F18900D08FFA /* BeanBag.swift */; };
 		8864FD851BE874A000A66EEA /* BeanBagHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD841BE874A000A66EEA /* BeanBagHandler.swift */; };
 		8864FD871BE96C7800A66EEA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD861BE96C7800A66EEA /* GameManager.swift */; };
+		8864FD891BEA668500A66EEA /* BackgroundTiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD881BEA668500A66EEA /* BackgroundTiler.swift */; };
+		8864FD8E1BEA803B00A66EEA /* BackgroundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD8D1BEA803B00A66EEA /* BackgroundData.swift */; };
+		8864FD901BEA8D3500A66EEA /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD8F1BEA8D3500A66EEA /* Tile.swift */; };
 		88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85B1BE669B2000A4765 /* AppDelegate.swift */; };
 		88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB85D1BE669B2000A4765 /* GameScene.sks */; };
 		88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85F1BE669B2000A4765 /* GameScene.swift */; };
@@ -42,6 +45,9 @@
 		8811D8ED1BE6F18900D08FFA /* BeanBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanBag.swift; sourceTree = "<group>"; };
 		8864FD841BE874A000A66EEA /* BeanBagHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanBagHandler.swift; sourceTree = "<group>"; };
 		8864FD861BE96C7800A66EEA /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		8864FD881BEA668500A66EEA /* BackgroundTiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTiler.swift; sourceTree = "<group>"; };
+		8864FD8D1BEA803B00A66EEA /* BackgroundData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundData.swift; sourceTree = "<group>"; };
+		8864FD8F1BEA8D3500A66EEA /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		88DEB8581BE669B2000A4765 /* SuperCornHole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCornHole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DEB85B1BE669B2000A4765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DEB85D1BE669B2000A4765 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 		88DEB84F1BE669B2000A4765 = {
 			isa = PBXGroup;
 			children = (
+				8864FD8F1BEA8D3500A66EEA /* Tile.swift */,
+				8864FD8D1BEA803B00A66EEA /* BackgroundData.swift */,
+				8864FD881BEA668500A66EEA /* BackgroundTiler.swift */,
 				8864FD861BE96C7800A66EEA /* GameManager.swift */,
 				8864FD841BE874A000A66EEA /* BeanBagHandler.swift */,
 				8811D8ED1BE6F18900D08FFA /* BeanBag.swift */,
@@ -208,6 +217,7 @@
 				TargetAttributes = {
 					88DEB8571BE669B2000A4765 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = VT2BD2ZS22;
 					};
 					88DEB86E1BE669B2000A4765 = {
 						CreatedOnToolsVersion = 7.1;
@@ -272,10 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8864FD891BEA668500A66EEA /* BackgroundTiler.swift in Sources */,
+				8864FD8E1BEA803B00A66EEA /* BackgroundData.swift in Sources */,
 				8811D8EE1BE6F18900D08FFA /* BeanBag.swift in Sources */,
 				8864FD871BE96C7800A66EEA /* GameManager.swift in Sources */,
 				88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */,
 				88DEB8621BE669B2000A4765 /* GameViewController.swift in Sources */,
+				8864FD901BEA8D3500A66EEA /* Tile.swift in Sources */,
 				8864FD851BE874A000A66EEA /* BeanBagHandler.swift in Sources */,
 				88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */,
 			);
@@ -410,10 +423,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SuperCornHole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -422,10 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SuperCornHole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornHole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

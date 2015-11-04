@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
     
     var beanBagHandler:BeanBagHandler?
+    var backgroundTiler: BackgroundTiler?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -20,6 +21,12 @@ class GameScene: SKScene {
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 //        
 //        self.addChild(myLabel)
+        backgroundTiler = BackgroundTiler(name: "yard", tileSize: 64)
+        for tile in backgroundTiler!.tiles{
+            tile.zPosition = -1
+            addChild(tile)
+        }
+        
         beanBagHandler = BeanBagHandler()
         for bag in (beanBagHandler?.blueBags)! {
             addChild(bag)
