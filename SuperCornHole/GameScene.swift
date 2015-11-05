@@ -16,6 +16,10 @@ class GameScene: SKScene {
     
     var isThrowing: Bool = false
     
+    var throwX = [Double]()
+    var throwY = [Double]()
+    var throwZ = [Double]()
+    
     
     var gamePad: GCMicroGamepad? = nil
     
@@ -105,6 +109,7 @@ class GameScene: SKScene {
                         self.isThrowing = true
                     } else if(buttonA.pressed == false) {
                         self.isThrowing = false
+                        self.throwBag()
                     }
                     
                     
@@ -125,8 +130,56 @@ class GameScene: SKScene {
     
     func controllerMoving(motion: GCMotion) {
         if(isThrowing == true) {
-            print(motion.gravity)
+            throwX.append(motion.gravity.x)
+            throwY.append(motion.gravity.y)
+            throwZ.append(motion.gravity.z)
             
         }
+    }
+    
+    func throwBag(){
+        var averageX: Double = 0
+        var totalX: Double = 0
+        
+        var averageY: Double = 0
+        var totalY: Double = 0
+        
+        var averageZ: Double = 0
+        var totalZ: Double = 0
+        
+        if(throwX.count < 200){
+            
+            for x in throwX {
+                totalX = totalX + x
+            }
+            averageX = totalX/Double(throwX.count)
+            
+            for y in throwY {
+                totalY = totalY + y
+            }
+            averageY = totalY/Double(throwY.count)
+            
+            for z in throwZ {
+                totalZ = totalZ + z
+            }
+            averageZ = totalZ/Double(throwZ.count)
+        }
+        print("-------------------")
+        print("AVERAGE X")
+        print(averageX)
+        print("AVERAGE Y")
+        print(averageY)
+        print("AVERAGE Z")
+        print(averageZ)
+        print("COUNT")
+        print(throwX.count)
+        print("-------------------")
+        print("")
+        
+        beanBagHandler?.throwBag(CGFloat(throwX.count))
+        
+        throwX.removeAll()
+        throwY.removeAll()
+        throwZ.removeAll()
     }
 }

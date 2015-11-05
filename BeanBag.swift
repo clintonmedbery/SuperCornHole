@@ -42,4 +42,9 @@ class BeanBag : SKSpriteNode{
         
     }
     
+    func placeBeanBagAtStart(){
+        self.position.y = 16
+        self.position.x = 1000
+    }
+    
 }
