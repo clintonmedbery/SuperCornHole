@@ -16,6 +16,7 @@ class BeanBagHandler {
     
     var defaultBlueXPosition : CGFloat = 800
     var defaultRedXPosition : CGFloat = 1120
+    
 
     
     init(){
@@ -35,3 +36,4 @@ class BeanBagHandler {
 
     }
 }
+

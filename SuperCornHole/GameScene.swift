@@ -7,11 +7,17 @@
 //
 
 import SpriteKit
+import GameController
 
 class GameScene: SKScene {
     
     var beanBagHandler:BeanBagHandler?
     var backgroundTiler: BackgroundTiler?
+    
+    var isThrowing: Bool = false
+    
+    
+    var gamePad: GCMicroGamepad? = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -21,6 +27,7 @@ class GameScene: SKScene {
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 //        
 //        self.addChild(myLabel)
+        
         backgroundTiler = BackgroundTiler(name: "yard", tileSize: 64)
         for tile in backgroundTiler!.tiles{
             tile.zPosition = -1
@@ -36,7 +43,15 @@ class GameScene: SKScene {
             addChild(bag)
         }
         //beanBagHandler?.blueBags[1].throwBag(50)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                selector: Selector("gameControllerDidConnect:"),
+                name: GCControllerDidConnectNotification,
+                object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: Selector("gameControllerDidDisconnect:"),
+            name: GCControllerDidDisconnectNotification,
+            object: nil)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -49,8 +64,69 @@ class GameScene: SKScene {
         
         
     }
+    
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
+   
+    func gameControllerDidConnect(notification : NSNotification) {
+        
+        if let controller = notification.object as? GCController {
+            
+            if let mGPad = controller.microGamepad {
+                
+                // Some setup
+                gamePad = mGPad
+                gamePad!.allowsRotation = true
+                gamePad!.reportsAbsoluteDpadValues = true
+                
+                print("MicroGamePad connected...")
+                
+                // Add valueChangedHandler for each control element
+//                gamePad!.dpad.valueChangedHandler = { (dpad: GCControllerDirectionPad, xValue: Float, yValue: Float) -> Void in
+//                    
+//                    print("dpad xValue = \(xValue), yValue = \(yValue)")
+//                    
+//                    
+//                }
+                
+                gamePad!.buttonA.valueChangedHandler = { (buttonA: GCControllerButtonInput, value:Float, pressed:Bool) -> Void in
+                    
+                    print("\(buttonA)")
+                    if(buttonA.pressed == true){
+                        print("------------------")
+                        print("")
+                        self.isThrowing = true
+                    } else if(buttonA.pressed == false) {
+                        self.isThrowing = false
+                    }
+                    
+                    
+                }
+                
+                gamePad!.buttonX.valueChangedHandler = { (buttonX: GCControllerButtonInput, value:Float, pressed:Bool) -> Void in
+                    
+                    print("\(buttonX)")
+                    
+                    
+                }
+                
+                controller.motion?.valueChangedHandler = self.controllerMoving
+            }
+            
+        }
+    }
+    
+    func controllerMoving(motion: GCMotion) {
+        if(isThrowing == true) {
+            print(motion.gravity)
+            
+        }
     }
 }
