@@ -9,10 +9,12 @@
 import SpriteKit
 import GameController
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var beanBagHandler:BeanBagHandler?
     var backgroundTiler: BackgroundTiler?
+    var cornholeBoard: CornholeBoard?
+    var hole: Hole?
     
     var isThrowing: Bool = false
     
@@ -31,14 +33,19 @@ class GameScene: SKScene {
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 //        
 //        self.addChild(myLabel)
+        cornholeBoard = CornholeBoard(spriteTextureName: "cornholeFrontReg", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 125, width: 256, height: 320)
         
+        addChild(cornholeBoard!)
+        
+        hole = Hole(spriteTextureName: "hole", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 235, width: 64, height: 64)
+        addChild(hole!)
         backgroundTiler = BackgroundTiler(name: "yard", tileSize: 64)
         for tile in backgroundTiler!.tiles{
             tile.zPosition = -1
             addChild(tile)
         }
         
-        beanBagHandler = BeanBagHandler()
+        beanBagHandler = BeanBagHandler(cornholeBoard: cornholeBoard!)
         for bag in (beanBagHandler?.blueBags)! {
             addChild(bag)
         }
@@ -72,6 +79,18 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
+        for bag in (beanBagHandler?.blueBags)!{
+            if((bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag)) == true){
+                bag.makeBagFall()
+            }
+        }
+        
+        for bag in (beanBagHandler?.redBags)!{
+            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag) == true){
+                bag.makeBagFall()
+            }
+        }
     }
     
     deinit {
@@ -181,5 +200,11 @@ class GameScene: SKScene {
         throwX.removeAll()
         throwY.removeAll()
         throwZ.removeAll()
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+      
+        
     }
 }

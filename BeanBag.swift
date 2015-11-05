@@ -10,9 +10,11 @@ import Foundation
 import SpriteKit
 
 class BeanBag : SKSpriteNode{
+    var board: CornholeBoard?
+    var bagState: BagState = BagState.Bucket
 
-
-    init(spriteTextureName: String, xPos: CGFloat, yPos: CGFloat, width: Int, height: Int) {
+    init(spriteTextureName: String, cornholeBoard: CornholeBoard, xPos: CGFloat, yPos: CGFloat, width: Int, height: Int) {
+        board = cornholeBoard
         let imageTexture = SKTexture(imageNamed: spriteTextureName)
         let spriteSize = CGSize(width: width, height: height)
         super.init(texture: imageTexture, color: SKColor.clearColor(), size: spriteSize)
@@ -22,8 +24,12 @@ class BeanBag : SKSpriteNode{
         self.physicsBody = body
         
         body.dynamic = true
+        body.categoryBitMask = PhysicsCategory.BeanBag
+        body.contactTestBitMask = PhysicsCategory.Board
         body.affectedByGravity = false
         body.allowsRotation = false
+        body.usesPreciseCollisionDetection = true
+
         self.position.x = xPos
         self.position.y = yPos
         
@@ -36,7 +42,7 @@ class BeanBag : SKSpriteNode{
     
     func throwBag(impulseAmount: CGFloat){
         
-
+        bagState = BagState.Air
         let landingY: CGFloat = impulseAmount * 10.0
         let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + landingY)
         
@@ -52,7 +58,21 @@ class BeanBag : SKSpriteNode{
         self.runAction(scaleAction) { () -> Void in
             let scaleBackAction: SKAction = SKAction.scaleBy(0.25, duration: 1.0)
             scaleAction.timingMode = .EaseOut
-            self.runAction(scaleBackAction)
+            self.runAction(scaleBackAction) { () -> Void in
+                print(self.board?.checkForLanding(self))
+                if(self.board?.checkForLanding(self) == true) {
+                    self.bagState = BagState.Board
+                    let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + impulseAmount)
+                    
+                    let slideAction:SKAction = SKAction.moveTo(point, duration: 0.25)
+                    self.runAction(slideAction) { () -> Void in
+                        
+                    }
+
+                } else {
+                    self.bagState = BagState.Ground
+                }
+            }
 
         }
         
@@ -61,8 +81,23 @@ class BeanBag : SKSpriteNode{
     
     func placeBeanBagAtStart(){
         self.position.y = 16
-        self.position.x = 1000
+        self.position.x = 950
         self.setScale(2)
     }
     
+    func makeBagFall(){
+        self.setScale(0)
+    }
+    
+}
+
+struct PhysicsCategory {
+    
+    static let Board: UInt32 = 0
+    static let BeanBag: UInt32 = 1
+    static let Hole: UInt32 = 2
+}
+
+enum BagState: Equatable{
+    case Bucket, Air, Board, Ground
 }
