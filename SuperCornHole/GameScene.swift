@@ -15,6 +15,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var backgroundTiler: BackgroundTiler?
     var cornholeBoard: CornholeBoard?
     var hole: Hole?
+    var blueBucket: Bucket?
+    var redBucket: Bucket?
+
     
     var isThrowing: Bool = false
     
@@ -44,6 +47,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             tile.zPosition = -1
             addChild(tile)
         }
+        
+        blueBucket = Bucket(frontSpriteName: "bucketFront", fullSpriteName: "bucket", width: 64, height: 64, xPos: (UIScreen.mainScreen().bounds.width/2) - 300, yPos: 100)
+        redBucket = Bucket(frontSpriteName: "bucketFront", fullSpriteName: "bucket", width: 64, height: 64, xPos: (UIScreen.mainScreen().bounds.width/2) + 300, yPos: 100)
+        
+        addChild((blueBucket?.full)!)
+        addChild((blueBucket?.front)!)
+
+        addChild((redBucket?.full)!)
+        addChild((redBucket?.front)!)
+
         
         beanBagHandler = BeanBagHandler(cornholeBoard: cornholeBoard!)
         for bag in (beanBagHandler?.blueBags)! {
@@ -81,7 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         
         for bag in (beanBagHandler?.blueBags)!{
-            if((bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag)) == true){
+            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag) == true){
                 bag.makeBagFall()
             }
         }

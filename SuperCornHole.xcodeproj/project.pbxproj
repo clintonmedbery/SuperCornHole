@@ -15,6 +15,7 @@
 		8864FD901BEA8D3500A66EEA /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD8F1BEA8D3500A66EEA /* Tile.swift */; };
 		8864FD921BEB271E00A66EEA /* CornholeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD911BEB271E00A66EEA /* CornholeBoard.swift */; };
 		8864FD941BEB400500A66EEA /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD931BEB400500A66EEA /* Hole.swift */; };
+		8864FD961BEB491800A66EEA /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD951BEB491800A66EEA /* Bucket.swift */; };
 		88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85B1BE669B2000A4765 /* AppDelegate.swift */; };
 		88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB85D1BE669B2000A4765 /* GameScene.sks */; };
 		88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85F1BE669B2000A4765 /* GameScene.swift */; };
@@ -52,6 +53,7 @@
 		8864FD8F1BEA8D3500A66EEA /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		8864FD911BEB271E00A66EEA /* CornholeBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornholeBoard.swift; sourceTree = "<group>"; };
 		8864FD931BEB400500A66EEA /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		8864FD951BEB491800A66EEA /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
 		88DEB8581BE669B2000A4765 /* SuperCornHole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCornHole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DEB85B1BE669B2000A4765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DEB85D1BE669B2000A4765 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		88DEB84F1BE669B2000A4765 = {
 			isa = PBXGroup;
 			children = (
+				8864FD951BEB491800A66EEA /* Bucket.swift */,
 				8864FD931BEB400500A66EEA /* Hole.swift */,
 				8864FD911BEB271E00A66EEA /* CornholeBoard.swift */,
 				8864FD8F1BEA8D3500A66EEA /* Tile.swift */,
@@ -297,6 +300,7 @@
 				88DEB8621BE669B2000A4765 /* GameViewController.swift in Sources */,
 				8864FD901BEA8D3500A66EEA /* Tile.swift in Sources */,
 				8864FD851BE874A000A66EEA /* BeanBagHandler.swift in Sources */,
+				8864FD961BEB491800A66EEA /* Bucket.swift in Sources */,
 				88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */,
 				8864FD941BEB400500A66EEA /* Hole.swift in Sources */,
 			);
