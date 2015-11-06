@@ -25,17 +25,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var throwY = [Double]()
     var throwZ = [Double]()
     
+    var readyLabel: SKLabelNode?
+    var pauseTint: SKSpriteNode?
     
     var gamePad: GCMicroGamepad? = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-//        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-//        myLabel.text = "Hello, World!";
-//        myLabel.fontSize = 65;
-//        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-//        
-//        self.addChild(myLabel)
+        pauseTint = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 2000, height: 1100))
+        pauseTint?.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        pauseTint?.zPosition = 25
+        pauseTint?.alpha = 0.7
+        addChild(pauseTint!)
+        
+        readyLabel = SKLabelNode(fontNamed:"Menlo")
+        readyLabel!.text = "Press Play to Start!";
+        readyLabel!.fontSize = 65;
+        readyLabel!.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        readyLabel!.zPosition = 30
+
+        self.addChild(readyLabel!)
+        
+        GameManager.gameManager.gameState = .NotReady
         cornholeBoard = CornholeBoard(spriteTextureName: "cornholeFrontReg", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 125, width: 256, height: 320)
         
         addChild(cornholeBoard!)
@@ -135,14 +146,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 gamePad!.buttonA.valueChangedHandler = { (buttonA: GCControllerButtonInput, value:Float, pressed:Bool) -> Void in
                     
                     print("\(buttonA)")
-                    if(buttonA.pressed == true){
+                    if(buttonA.pressed == true && GameManager.gameManager.gameState == .Playing){
                         print("------------------")
                         print("")
                         self.isThrowing = true
-                    } else if(buttonA.pressed == false) {
+                    } else if(buttonA.pressed == false && GameManager.gameManager.gameState == .Playing) {
                         self.isThrowing = false
                         self.throwBag()
                     }
+                    
+                   
                     
                     
                 }
@@ -151,8 +164,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     print("\(buttonX)")
                     
+                    if(buttonX.pressed == true){
+                        if(GameManager.gameManager.gameState == .Playing) {
+                            print("PAUSED")
+                            self.pauseTint?.hidden = false
+                            //self.view!.paused = true
+                            GameManager.gameManager.gameState = GameState.Paused
+                            
+                        } else if(GameManager.gameManager.gameState == .Paused) {
+                            print("UNPAUSED")
+                            self.pauseTint?.hidden = true
+                            //self.view!.paused = false
+                            
+                            GameManager.gameManager.gameState = GameState.Playing
+
+
+                        }
+                    }
+                    
+                    if(buttonX.pressed == true && GameManager.gameManager.gameState == .NotReady){
+                        self.readyLabel?.hidden = true
+                        self.pauseTint?.hidden = true
+                        GameManager.gameManager.gameState = .Playing
+
+                    }
                     
                 }
+                
+                
                 
                 controller.motion?.valueChangedHandler = self.controllerMoving
             }
@@ -196,17 +235,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             averageZ = totalZ/Double(throwZ.count)
         }
-        print("-------------------")
-        print("AVERAGE X")
-        print(averageX)
-        print("AVERAGE Y")
-        print(averageY)
-        print("AVERAGE Z")
-        print(averageZ)
-        print("COUNT")
-        print(throwX.count)
-        print("-------------------")
-        print("")
+//        print("-------------------")
+//        print("AVERAGE X")
+//        print(averageX)
+//        print("AVERAGE Y")
+//        print(averageY)
+//        print("AVERAGE Z")
+//        print(averageZ)
+//        print("COUNT")
+//        print(throwX.count)
+//        print("-------------------")
+//        print("")
         
         beanBagHandler?.throwBag(CGFloat(throwX.count))
         
