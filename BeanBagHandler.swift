@@ -13,6 +13,7 @@ class BeanBagHandler {
     
     var blueBags = [BeanBag]()
     var redBags = [BeanBag]()
+    var thrownBag: BeanBag?
     var currentBeanBag: BeanBag?
     
     var currentBlue: Int?
@@ -23,6 +24,8 @@ class BeanBagHandler {
     
     var beanBagLayer: Int?
     let BOTTOM_LAYER: Int = 10
+    
+    let FINAL_SCORE: Int = 21
     
     var defaultBlueXPosition : CGFloat = 800
     var defaultRedXPosition : CGFloat = 1120
@@ -66,34 +69,98 @@ class BeanBagHandler {
     }
     
     func throwBag(tossPower: CGFloat) {
+        thrownBag = currentBeanBag!
+        GameManager.gameManager.gameState = .BagInPlay
+        currentBeanBag?.throwBag(tossPower, completion: { (result) -> Void in
+            if(result == true){
+                GameManager.gameManager.gameState = .Playing
+                if(GameManager.gameManager.currentTeam == CurrentTeam.BlueTeam) {
+                    self.currentBlue = self.currentBlue! + 1
+                    self.blueThrowsLeft = self.blueThrowsLeft! - 1
+                    
+                    if(self.redThrowsLeft >= 1){
+                        self.currentBeanBag = self.redBags[self.currentRed!]
+                    }
+                    self.currentBeanBag?.placeBeanBagAtStart()
+                    self.currentBeanBag?.zPosition = CGFloat(self.BOTTOM_LAYER + self.beanBagLayer!)
+                    
+                    self.beanBagLayer = self.beanBagLayer! + 1
+                    GameManager.gameManager.currentTeam = CurrentTeam.RedTeam
+                    
+                } else if(GameManager.gameManager.currentTeam == CurrentTeam.RedTeam) {
+                    self.currentRed = self.currentRed! + 1
+                    self.redThrowsLeft = self.redThrowsLeft! - 1
+                    if(self.redThrowsLeft == 0){
+                        self.endRound()
+                    }
+                    
+                    if(self.blueThrowsLeft >= 1){
+                        self.currentBeanBag = self.blueBags[self.currentBlue!]
+                    }
+                    self.currentBeanBag?.zPosition = CGFloat(self.BOTTOM_LAYER + self.beanBagLayer!)
+                    self.beanBagLayer = self.beanBagLayer! + 1
+                    
+                    self.currentBeanBag?.placeBeanBagAtStart()
+                    GameManager.gameManager.currentTeam = CurrentTeam.BlueTeam
+                }
+
+            }
+            
+        })
         
-        currentBeanBag?.throwBag(tossPower)
-        if(GameManager.gameManager.currentTeam == CurrentTeam.BlueTeam) {
-            currentBlue = currentBlue! + 1
-            blueThrowsLeft = blueThrowsLeft! - 1
-            
-            if(redThrowsLeft >= 1){
-                currentBeanBag = redBags[currentRed!]
+    }
+    
+    func endRound(){
+        var redScore: Int = 0
+        var blueScore: Int = 0
+
+        for bag in redBags {
+            switch bag.bagState {
+            case .Board:
+                redScore = redScore + 1
+                break
+            case .InHole:
+                redScore = redScore + 3
+                break
+            default:
+                break
             }
-            currentBeanBag?.placeBeanBagAtStart()
-            currentBeanBag?.zPosition = CGFloat(BOTTOM_LAYER + beanBagLayer!)
-            
-            beanBagLayer = beanBagLayer! + 1
-            GameManager.gameManager.currentTeam = CurrentTeam.RedTeam
-            
-        } else if(GameManager.gameManager.currentTeam == CurrentTeam.RedTeam) {
-            currentRed = currentRed! + 1
-            redThrowsLeft = redThrowsLeft! - 1
-            
-            if(blueThrowsLeft >= 1){
-                currentBeanBag = blueBags[currentBlue!]
+        }
+        
+        for bag in blueBags {
+            switch bag.bagState {
+            case .Board:
+                blueScore = blueScore + 1
+                break
+            case .InHole:
+                blueScore = blueScore + 3
+                break
+            default:
+                break
             }
-            currentBeanBag?.zPosition = CGFloat(BOTTOM_LAYER + beanBagLayer!)
-            beanBagLayer = beanBagLayer! + 1
-            
-            currentBeanBag?.placeBeanBagAtStart()
-            GameManager.gameManager.currentTeam = CurrentTeam.BlueTeam
+        }
+        
+        if(blueScore > redScore){
+            GameManager.gameManager.blueTeamScore = GameManager.gameManager.blueTeamScore + blueScore - redScore
+            GameManager.gameManager.gameState = .RoundEnd
+
+            if(GameManager.gameManager.blueTeamScore >= FINAL_SCORE) {
+                GameManager.gameManager.gameState = .GameFinished
+            }
+        } else if(blueScore < redScore){
+            GameManager.gameManager.redTeamScore = GameManager.gameManager.redTeamScore + redScore - blueScore
+            GameManager.gameManager.gameState = .RoundEnd
+
+            if(GameManager.gameManager.redTeamScore >= FINAL_SCORE) {
+                GameManager.gameManager.gameState = .GameFinished
+            }
+        } else {
+            GameManager.gameManager.gameState = .RoundEnd
         }
     }
+    
+    
+    
+    
 }
 

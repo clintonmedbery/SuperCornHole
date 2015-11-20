@@ -40,8 +40,7 @@ class BeanBag : SKSpriteNode{
     }
 
     
-    func throwBag(impulseAmount: CGFloat){
-        
+    func throwBag(impulseAmount: CGFloat, completion: (result: Bool) -> Void) {
         bagState = BagState.Air
         let landingY: CGFloat = impulseAmount * 10.0
         let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + landingY)
@@ -66,11 +65,14 @@ class BeanBag : SKSpriteNode{
                     
                     let slideAction:SKAction = SKAction.moveTo(point, duration: 0.25)
                     self.runAction(slideAction) { () -> Void in
-                        
+                        completion(result: true)
+
                     }
 
                 } else {
                     self.bagState = BagState.Ground
+                    completion(result: true)
+
                 }
             }
 
@@ -87,6 +89,8 @@ class BeanBag : SKSpriteNode{
     
     func makeBagFall(){
         self.setScale(0)
+        bagState = .InHole
+        GameManager.gameManager.gameState = .Playing
     }
     
 }
@@ -99,5 +103,5 @@ struct PhysicsCategory {
 }
 
 enum BagState: Equatable{
-    case Bucket, Air, Board, Ground
+    case Bucket, Air, Board, Ground, InHole
 }

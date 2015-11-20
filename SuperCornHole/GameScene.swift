@@ -115,6 +115,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 bag.makeBagFall()
             }
         }
+        
+        if(GameManager.gameManager.gameState == .RoundEnd){
+            print("End Round")
+        }
+        
+        print(GameManager.gameManager.gameState)
+        
     }
     
     deinit {

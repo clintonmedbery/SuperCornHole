@@ -39,5 +39,5 @@ enum CurrentTeam {
 }
 
 enum GameState {
-    case NotReady, Playing, Paused
+    case NotReady, Playing, Paused, BagInPlay, GameFinished, RoundEnd
 }
