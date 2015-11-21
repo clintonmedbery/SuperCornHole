@@ -17,7 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hole: Hole?
     var blueBucket: Bucket?
     var redBucket: Bucket?
-
+    var allBags = [BeanBag]()
     
     var isThrowing: Bool = false
     
@@ -71,13 +71,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         
         beanBagHandler = BeanBagHandler(cornholeBoard: cornholeBoard!)
-        for bag in (beanBagHandler?.blueBags)! {
-            addChild(bag)
-        }
+        addBags()
         
-        for bag in (beanBagHandler?.redBags)! {
-            addChild(bag)
-        }
         //beanBagHandler?.blueBags[1].throwBag(50)
         NSNotificationCenter.defaultCenter().addObserver(self,
                 selector: Selector("gameControllerDidConnect:"),
@@ -123,14 +118,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
             self.readyLabel?.hidden = false
             self.pauseTint?.hidden = false
-            for bag in beanBagHandler!.redBags{
-                bag.removeFromParent()
-            }
+            clearBags()
             
-            removeChildrenInArray(beanBagHandler!.redBags)
-            removeChildrenInArray(beanBagHandler!.blueBags)
-
+            
+            beanBagHandler!.reset()
+            addBags()
+            
             GameManager.gameManager.gameState = .NotReady
+            print(GameManager.gameManager.blueTeamScore)
+            print(GameManager.gameManager.redTeamScore)
+
         }
         
         
@@ -277,5 +274,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
       
         
+    }
+    
+    func addBags(){
+        for bag in (beanBagHandler?.blueBags)! {
+            allBags.append(bag)
+            //addChild(bag)
+        }
+        
+        for bag in (beanBagHandler?.redBags)! {
+            allBags.append(bag)
+            
+            //addChild(bag)
+        }
+        
+        for bag in allBags{
+            addChild(bag)
+        }
+
+    }
+    
+    func clearBags() {
+        for bag in allBags {
+            bag.removeFromParent()
+        }
+        allBags.removeAll()
     }
 }

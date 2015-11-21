@@ -57,6 +57,15 @@ class BeanBagHandler {
         placeCurrentBeanBag()
 
     }
+    
+    func removeAll() {
+        for bag in blueBags {
+            bag.removeFromParent()
+            bag.removeAllChildren()
+        }
+        blueBags.removeAll()
+    }
+    
     func placeCurrentBeanBag() {
         currentBeanBag?.placeBeanBagAtStart()
         currentBeanBag?.zPosition = CGFloat(BOTTOM_LAYER + beanBagLayer!)
