@@ -37,17 +37,28 @@ class BeanBagHandler {
     init(cornholeBoard: CornholeBoard){
         board = cornholeBoard
         reset()
+        placeCurrentBeanBag()
     }
     
     func reset(){
         resetBags()
-        currentBeanBag = blueBags[0]
-        currentBeanBag?.placeBeanBagAtStart()
         currentBlue = 0
         currentRed = 0
         redThrowsLeft = 5
         blueThrowsLeft = 5
         beanBagLayer = 1
+        if(GameManager.gameManager.currentTeam == .BlueTeam){
+            currentBeanBag = blueBags[0]
+            
+        } else {
+            currentBeanBag = redBags[0]
+            
+        }
+        placeCurrentBeanBag()
+
+    }
+    func placeCurrentBeanBag() {
+        currentBeanBag?.placeBeanBagAtStart()
         currentBeanBag?.zPosition = CGFloat(BOTTOM_LAYER + beanBagLayer!)
 
     }
@@ -90,9 +101,6 @@ class BeanBagHandler {
                 } else if(GameManager.gameManager.currentTeam == CurrentTeam.RedTeam) {
                     self.currentRed = self.currentRed! + 1
                     self.redThrowsLeft = self.redThrowsLeft! - 1
-                    if(self.redThrowsLeft == 0){
-                        self.endRound()
-                    }
                     
                     if(self.blueThrowsLeft >= 1){
                         self.currentBeanBag = self.blueBags[self.currentBlue!]
@@ -105,7 +113,9 @@ class BeanBagHandler {
                 }
 
             }
-            
+            if(self.redThrowsLeft == 0 && self.blueThrowsLeft == 0){
+                self.endRound()
+            }
         })
         
     }
@@ -143,13 +153,19 @@ class BeanBagHandler {
         if(blueScore > redScore){
             GameManager.gameManager.blueTeamScore = GameManager.gameManager.blueTeamScore + blueScore - redScore
             GameManager.gameManager.gameState = .RoundEnd
+            GameManager.gameManager.currentTeam = .BlueTeam
+            GameManager.gameManager.gameMessage = "Blue Team Wins This Round";
 
+            
             if(GameManager.gameManager.blueTeamScore >= FINAL_SCORE) {
                 GameManager.gameManager.gameState = .GameFinished
             }
         } else if(blueScore < redScore){
             GameManager.gameManager.redTeamScore = GameManager.gameManager.redTeamScore + redScore - blueScore
             GameManager.gameManager.gameState = .RoundEnd
+            GameManager.gameManager.currentTeam = .RedTeam
+            GameManager.gameManager.gameMessage = "Red Team Wins This Round";
+
 
             if(GameManager.gameManager.redTeamScore >= FINAL_SCORE) {
                 GameManager.gameManager.gameState = .GameFinished
@@ -157,6 +173,9 @@ class BeanBagHandler {
         } else {
             GameManager.gameManager.gameState = .RoundEnd
         }
+        
+        reset()
+        
     }
     
     

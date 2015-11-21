@@ -39,7 +39,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(pauseTint!)
         
         readyLabel = SKLabelNode(fontNamed:"Menlo")
-        readyLabel!.text = "Press Play to Start!";
+        GameManager.gameManager.gameMessage = "Press Play to Start!"
+        readyLabel!.text = GameManager.gameManager.gameMessage;
         readyLabel!.fontSize = 65;
         readyLabel!.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         readyLabel!.zPosition = 30
@@ -118,9 +119,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(GameManager.gameManager.gameState == .RoundEnd){
             print("End Round")
+            readyLabel!.text = GameManager.gameManager.gameMessage;
+
+            self.readyLabel?.hidden = false
+            self.pauseTint?.hidden = false
+            for bag in beanBagHandler!.redBags{
+                bag.removeFromParent()
+            }
+            
+            removeChildrenInArray(beanBagHandler!.redBags)
+            removeChildrenInArray(beanBagHandler!.blueBags)
+
+            GameManager.gameManager.gameState = .NotReady
         }
         
-        print(GameManager.gameManager.gameState)
         
     }
     

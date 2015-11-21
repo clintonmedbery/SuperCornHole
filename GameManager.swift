@@ -14,6 +14,7 @@ class GameManager {
     var redTeamScore: Int = 0
     var currentTeam: CurrentTeam?
     var gameState: GameState?
+    var gameMessage: String?
     
     
     let WINNING_SCORE = 21
