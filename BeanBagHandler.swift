@@ -167,6 +167,7 @@ class BeanBagHandler {
 
             
             if(GameManager.gameManager.blueTeamScore >= FINAL_SCORE) {
+                GameManager.gameManager.gameMessage = "Blue Team Wins!"
                 GameManager.gameManager.gameState = .GameFinished
             }
         } else if(blueScore < redScore){
@@ -177,6 +178,7 @@ class BeanBagHandler {
 
 
             if(GameManager.gameManager.redTeamScore >= FINAL_SCORE) {
+                GameManager.gameManager.gameMessage = "Red Team Wins!"
                 GameManager.gameManager.gameState = .GameFinished
             }
         } else {

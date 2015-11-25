@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SuperCornHole/GameScene.swift"
-            timestampString = "469765945.542474"
+            timestampString = "470104423.142716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SuperCornHole/GameScene.swift"
-            timestampString = "469765945.542474"
+            timestampString = "470104423.142716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeanBagHandler.swift"
@@ -145,6 +145,54 @@
             endingLineNumber = "70"
             landmarkName = "placeCurrentBeanBag()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperCornHole/GameScene.swift"
+            timestampString = "470106892.306608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "gameControllerDidConnect(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperCornHole.GameScene.controllerMoving (SuperCornHole.GameScene)(__ObjC.GCMotion) -&gt; ()"
+                  moduleName = "SuperCornHole"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/clintonmedbery/Documents/XcodeProjects/SuperCornHole/SuperCornHole/GameScene.swift"
+                  timestampString = "470106814.833912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperCornHole.GameScene.controllerMoving (SuperCornHole.GameScene) -&gt; (__ObjC.GCMotion) -&gt; ()"
+                  moduleName = "SuperCornHole"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/clintonmedbery/Documents/XcodeProjects/SuperCornHole/SuperCornHole/GameScene.swift"
+                  timestampString = "470106814.83415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

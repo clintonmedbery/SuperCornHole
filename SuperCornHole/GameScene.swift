@@ -28,13 +28,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var readyLabel: SKLabelNode?
     var pauseTint: SKSpriteNode?
     
+    var blueScoreLabel: SKLabelNode?
+    var redScoreLabel: SKLabelNode?
+
+    
     var gamePad: GCMicroGamepad? = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         pauseTint = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: 2000, height: 1100))
         pauseTint?.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        pauseTint?.zPosition = 25
+        pauseTint?.zPosition = 29
         pauseTint?.alpha = 0.7
         addChild(pauseTint!)
         
@@ -44,7 +48,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         readyLabel!.fontSize = 65;
         readyLabel!.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         readyLabel!.zPosition = 30
+        
+        let blueColor = UIColor(
+            red:2.0,
+            green:45.0,
+            blue:179.0,
+            alpha:1.0)
+        
+        let redColor = UIColor(
+            red:252.0,
+            green:0.0,
+            blue:9.0,
+            alpha:1.0)
+        
+        blueScoreLabel = SKLabelNode(fontNamed:"Menlo")
+        blueScoreLabel!.fontColor = UIColor.blueColor()
+        blueScoreLabel!.text = "00";
+        blueScoreLabel!.fontSize = 60;
+        blueScoreLabel!.position = CGPoint(x:CGRectGetMinX(self.frame) + 100, y:CGRectGetMinY(self.frame) + 100)
+        blueScoreLabel!.zPosition = 28
+        
+        redScoreLabel = SKLabelNode(fontNamed:"Menlo")
+        redScoreLabel?.fontColor = UIColor.redColor()
+        redScoreLabel!.text = "00";
+        redScoreLabel!.fontSize = 60;
+        redScoreLabel!.position = CGPoint(x:CGRectGetMaxX(self.frame) - 100, y:CGRectGetMinY(self.frame) + 100)
+        redScoreLabel!.zPosition = 28
 
+        self.addChild(redScoreLabel!)
+        self.addChild(blueScoreLabel!)
         self.addChild(readyLabel!)
         
         GameManager.gameManager.gameState = .NotReady
@@ -100,6 +132,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
+        redScoreLabel!.text = String(GameManager.gameManager.redTeamScore)
+        blueScoreLabel!.text = String(GameManager.gameManager.blueTeamScore)
+        
         for bag in (beanBagHandler?.blueBags)!{
             if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag) == true){
                 bag.makeBagFall()
@@ -130,6 +165,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         }
         
+        if(GameManager.gameManager.gameState == .GameFinished){
+            print("End Game")
+            readyLabel!.text = GameManager.gameManager.gameMessage;
+            
+            self.readyLabel?.hidden = false
+            self.pauseTint?.hidden = false
+        }
         
     }
     
@@ -203,6 +245,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.pauseTint?.hidden = true
                         GameManager.gameManager.gameState = .Playing
 
+                    }
+                    
+                    if(buttonX.pressed == true && GameManager.gameManager.gameState == .GameFinished){
+                        self.readyLabel?.hidden = true
+                        self.pauseTint?.hidden = true
+                        GameManager.gameManager.resetGame()
+                        self.clearBags()
+                        
+                        self.beanBagHandler!.reset()
+                        self.addBags()
+                        GameManager.gameManager.gameState = .Playing
+                        
                     }
                     
                 }
