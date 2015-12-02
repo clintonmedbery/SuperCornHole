@@ -37,7 +37,6 @@ class CornholeBoard: SKSpriteNode {
     }
 
     func checkForLanding(beanBag: BeanBag) -> Bool {
-        print("CHECKING")
         if(self.containsPoint(beanBag.position)){
             return true
         }

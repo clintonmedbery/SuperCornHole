@@ -24,7 +24,7 @@ class BackgroundTiler {
             var currentY: Int = tileSize/2
             for column in backgroundData.yardBackground {
                 for numTile in column {
-                    print(UIScreen.mainScreen().bounds.height)
+//                    print(UIScreen.mainScreen().bounds.height)
                     if(numTile == 0){
                         tiles.append(Tile(spriteTextureName: "sky1", xPos: CGFloat(currentX), yPos: CGFloat(currentY), width: tileSize, height: tileSize))
                     } else if(numTile == 1) {

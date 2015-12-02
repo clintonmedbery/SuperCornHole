@@ -21,9 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var isThrowing: Bool = false
     
-    var throwX = [Double]()
-    var throwY = [Double]()
-    var throwZ = [Double]()
+    var motionReadings = [MotionReading]()
+    
+
     
     var readyLabel: SKLabelNode?
     var pauseTint: SKSpriteNode?
@@ -115,6 +115,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             selector: Selector("gameControllerDidDisconnect:"),
             name: GCControllerDidDisconnectNotification,
             object: nil)
+        
+        print("Gravity X,Gravity Y,Gravity Z,Acceleration X,Acceleration Y,Acceleration Z,Quaternion W,Quaternion X,Quaternion Y,Quaternion Z")
+
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -148,7 +151,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if(GameManager.gameManager.gameState == .RoundEnd){
-            print("End Round")
+//            print("End Round")
             readyLabel!.text = GameManager.gameManager.gameMessage;
 
             self.readyLabel?.hidden = false
@@ -160,8 +163,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addBags()
             
             GameManager.gameManager.gameState = .NotReady
-            print(GameManager.gameManager.blueTeamScore)
-            print(GameManager.gameManager.redTeamScore)
+//            print(GameManager.gameManager.blueTeamScore)
+//            print(GameManager.gameManager.redTeamScore)
 
         }
         
@@ -203,10 +206,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 gamePad!.buttonA.valueChangedHandler = { (buttonA: GCControllerButtonInput, value:Float, pressed:Bool) -> Void in
                     
-                    print("\(buttonA)")
+//                    print("\(buttonA)")
                     if(buttonA.pressed == true && GameManager.gameManager.gameState == .Playing){
-                        print("------------------")
-                        print("")
+//                        print("------------------")
+//                        print("")
                         self.isThrowing = true
                     } else if(buttonA.pressed == false && GameManager.gameManager.gameState == .Playing) {
                         self.isThrowing = false
@@ -220,7 +223,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 gamePad!.buttonX.valueChangedHandler = { (buttonX: GCControllerButtonInput, value:Float, pressed:Bool) -> Void in
                     
-                    print("\(buttonX)")
+//                    print("\(buttonX)")
                     
                     if(buttonX.pressed == true){
                         if(GameManager.gameManager.gameState == .Playing) {
@@ -271,40 +274,80 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func controllerMoving(motion: GCMotion) {
         if(isThrowing == true) {
-            throwX.append(motion.gravity.x)
-            throwY.append(motion.gravity.y)
-            throwZ.append(motion.gravity.z)
+            
+           
+            let reading: MotionReading = MotionReading(gravityX: motion.gravity.x, gravityY: motion.gravity.y, gravityZ: motion.gravity.z, accelerationX: motion.userAcceleration.x, accelerationY: motion.userAcceleration.y, accelerationZ: motion.userAcceleration.z, quaternionW: motion.attitude.w, quaternionX: motion.attitude.x, quaternionY: motion.attitude.y, quaternionZ: motion.attitude.z)
+//            print("")
+//            print("")
+
+//            reading.printHeader()
+//            print(motion.gravity.x)
+//            print(motion.gravity.y)
+//            print(motion.gravity.z)
+//            print(motion.userAcceleration.x)
+//            print(motion.userAcceleration.y)
+//            print(motion.userAcceleration.z)
+//            print(motion.attitude.w)
+//            print(motion.attitude.x)
+//            print(motion.attitude.y)
+//            print(motion.attitude.z)
+//            reading.printReadingCSV()
+//            print("")
+//            print("")
+            motionReadings.append(reading)
+
             
         }
     }
     
     func throwBag(){
-        var averageX: Double = 0
-        var totalX: Double = 0
+        var gravityAverageX: Double = 0
+        var gravityAverageY: Double = 0
+        var gravityAverageZ: Double = 0
+        var accelerationAverageX: Double = 0
+        var accelerationAverageY: Double = 0
+        var accelerationAverageZ: Double = 0
         
-        var averageY: Double = 0
-        var totalY: Double = 0
+        var gravityTotalX: Double = 0
+        var gravityTotalY: Double = 0
+        var gravityTotalZ: Double = 0
+        var accelerationTotalX: Double = 0
+        var accelerationTotalY: Double = 0
+        var accelerationTotalZ: Double = 0
         
-        var averageZ: Double = 0
-        var totalZ: Double = 0
+        var averageReading: MotionReading?
         
-        if(throwX.count < 200){
+        
+        if(motionReadings.count < 100){
             
-            for x in throwX {
-                totalX = totalX + x
+            for reading in motionReadings {
+                gravityTotalX = gravityTotalX + reading.gravity.x
+                gravityTotalY = gravityTotalY + reading.gravity.y
+                gravityTotalZ = gravityTotalZ + reading.gravity.z
+                
+                accelerationTotalX = accelerationTotalX + reading.acceleration.x
+                accelerationTotalY = accelerationTotalY + reading.acceleration.y
+                accelerationTotalZ = accelerationTotalZ + reading.acceleration.z
+
+                
             }
-            averageX = totalX/Double(throwX.count)
             
-            for y in throwY {
-                totalY = totalY + y
-            }
-            averageY = totalY/Double(throwY.count)
+            gravityAverageX = (gravityTotalX / Double(motionReadings.count))
+            gravityAverageY = (gravityTotalY / Double(motionReadings.count))
+            gravityAverageZ = (gravityTotalZ / Double(motionReadings.count))
             
-            for z in throwZ {
-                totalZ = totalZ + z
-            }
-            averageZ = totalZ/Double(throwZ.count)
+            accelerationAverageX = (accelerationTotalX / Double(motionReadings.count))
+            accelerationAverageY = (accelerationTotalY / Double(motionReadings.count))
+            accelerationAverageZ = (accelerationTotalZ / Double(motionReadings.count))
+            
+            
+            averageReading = MotionReading(gravityX: gravityAverageX, gravityY: gravityAverageY, gravityZ: gravityAverageZ, accelerationX: accelerationAverageX, accelerationY: accelerationAverageY, accelerationZ: accelerationAverageZ, quaternionW: 0.0, quaternionX: 0.0, quaternionY: 0.0, quaternionZ: 0.0)
+            averageReading?.printReadingCSV()
+            
         }
+        
+        
+        
 //        print("-------------------")
 //        print("AVERAGE X")
 //        print(averageX)
@@ -313,15 +356,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        print("AVERAGE Z")
 //        print(averageZ)
 //        print("COUNT")
-//        print(throwX.count)
+//        print(gravityX.count)
 //        print("-------------------")
 //        print("")
+//        
+        beanBagHandler?.throwBag(CGFloat(motionReadings.count))
         
-        beanBagHandler?.throwBag(CGFloat(throwX.count))
-        
-        throwX.removeAll()
-        throwY.removeAll()
-        throwZ.removeAll()
+        motionReadings.removeAll()
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
