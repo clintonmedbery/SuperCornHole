@@ -315,6 +315,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var accelerationTotalY: Double = 0
         var accelerationTotalZ: Double = 0
         
+        var highGravityX: Double = -100.0
+        var highGravityY: Double = -1000.0
+        var highGravityZ: Double = -1000.0
+        
+        var lowGravityX: Double = 100.0
+        var lowGravityY: Double = 100.0
+        var lowGravityZ: Double = 100.0
+
+        
         var averageReading: MotionReading?
         
         
@@ -328,8 +337,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 accelerationTotalX = accelerationTotalX + reading.acceleration.x
                 accelerationTotalY = accelerationTotalY + reading.acceleration.y
                 accelerationTotalZ = accelerationTotalZ + reading.acceleration.z
-
                 
+                if(reading.gravity.x < lowGravityX){
+                    lowGravityX = reading.gravity.x
+                    
+                }
+                
+                if(reading.gravity.y < lowGravityY){
+                    lowGravityY = reading.gravity.y
+                    
+                }
+                
+                if(reading.gravity.z < lowGravityZ){
+                    lowGravityZ = reading.gravity.z
+                    
+                }
+                
+                if(reading.gravity.x > highGravityX){
+                    highGravityX = reading.gravity.x
+                    
+                }
+                
+                if(reading.gravity.y > highGravityY){
+                    highGravityY = reading.gravity.y
+                    
+                }
+                
+                if(reading.gravity.z > highGravityZ){
+                    highGravityZ = reading.gravity.z
+                    
+                }
             }
             
             gravityAverageX = (gravityTotalX / Double(motionReadings.count))
@@ -342,26 +379,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             
             averageReading = MotionReading(gravityX: gravityAverageX, gravityY: gravityAverageY, gravityZ: gravityAverageZ, accelerationX: accelerationAverageX, accelerationY: accelerationAverageY, accelerationZ: accelerationAverageZ, quaternionW: 0.0, quaternionX: 0.0, quaternionY: 0.0, quaternionZ: 0.0)
-            averageReading?.printReadingCSV()
-            
+            print("")
+            print("")
+            print("")
+            print("Low Gravity X: \(lowGravityX)")
+            print("High Gravity X: \(highGravityX)")
+            print("Low Gravity Y: \(lowGravityY)")
+            print("High Gravity Y: \(highGravityY)")
+            print("Low Gravity Z: \(lowGravityZ)")
+            print("High Gravity Z: \(highGravityZ)")
+            averageReading?.printReading()
+            print("")
+            print("")
+            print("")
+
         }
         
         
-        
-//        print("-------------------")
-//        print("AVERAGE X")
-//        print(averageX)
-//        print("AVERAGE Y")
-//        print(averageY)
-//        print("AVERAGE Z")
-//        print(averageZ)
-//        print("COUNT")
-//        print(gravityX.count)
-//        print("-------------------")
-//        print("")
-//        
-        beanBagHandler?.throwBag(CGFloat(motionReadings.count))
-        
+
+        if(lowGravityX != 100.0){
+            beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame))
+
+        }
         motionReadings.removeAll()
     }
     

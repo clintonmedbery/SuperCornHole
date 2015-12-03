@@ -27,6 +27,18 @@ class MotionReading {
         
     }
     
+    func printReading(){
+        print("Gravity X: \(gravity.x)")
+        print("Gravity Y: \(gravity.y)")
+        print("Gravity Z: \(gravity.z)")
+        
+
+        print("Acceleration X: \(acceleration.x)")
+        print("Acceleration Y: \(acceleration.y)")
+        print("Acceleration Z: \(acceleration.z)")
+
+    }
+    
     func printReadingCSV(){
         print("\(gravity.x),\(gravity.y),\(gravity.z),\(acceleration.x),\(acceleration.y),\(acceleration.z),\(quaternion.w),\(quaternion.x),\(quaternion.y),\(quaternion.z)")
     }

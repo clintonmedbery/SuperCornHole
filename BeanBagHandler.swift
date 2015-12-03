@@ -88,10 +88,10 @@ class BeanBagHandler {
         redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 75, width: 32, height: 32))
     }
     
-    func throwBag(tossPower: CGFloat) {
+    func throwBag(tossPower: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat) {
         thrownBag = currentBeanBag!
         GameManager.gameManager.gameState = .BagInPlay
-        currentBeanBag?.throwBag(tossPower, completion: { (result) -> Void in
+        currentBeanBag?.throwBag(tossPower, axisX: axisX, screenMidPoint: screenMidPoint, completion: { (result) -> Void in
             if(result == true){
                 GameManager.gameManager.gameState = .Playing
                 if(GameManager.gameManager.currentTeam == CurrentTeam.BlueTeam) {

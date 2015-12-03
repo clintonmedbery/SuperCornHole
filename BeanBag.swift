@@ -40,10 +40,15 @@ class BeanBag : SKSpriteNode{
     }
 
     
-    func throwBag(impulseAmount: CGFloat, completion: (result: Bool) -> Void) {
+    func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, completion: (result: Bool) -> Void) {
         bagState = BagState.Air
-        let landingY: CGFloat = impulseAmount * 10.0
-        let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + landingY)
+        let landingY: CGFloat = impulseAmount * 1700.0
+        
+        
+        let landingX: CGFloat = ((axisX + 0.02) * 165) + screenMidPoint
+        print("")
+        print(landingX)
+        let point: CGPoint = CGPoint(x: landingX, y: self.position.y + landingY)
         
         let moveAction:SKAction = SKAction.moveTo(point, duration: 2)
         let scaleAction: SKAction = SKAction.scaleBy(2, duration: 1.0)
