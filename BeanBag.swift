@@ -63,18 +63,22 @@ class BeanBag : SKSpriteNode{
             let scaleBackAction: SKAction = SKAction.scaleBy(0.25, duration: 1.0)
             scaleAction.timingMode = .EaseOut
             self.runAction(scaleBackAction) { () -> Void in
-//                print(self.board?.checkForLanding(self))
+                print(self.board?.checkForLanding(self))
                 if(self.board?.checkForLanding(self) == true) {
                     self.bagState = BagState.Board
-                    let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + impulseAmount)
+                    let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + (impulseAmount * 150))
                     
                     let slideAction:SKAction = SKAction.moveTo(point, duration: 0.25)
                     self.runAction(slideAction) { () -> Void in
+                        print("Y POSITION")
+                        print(self.position.y)
                         completion(result: true)
 
                     }
 
                 } else {
+                    print("Y POSITION")
+                    print(self.position.y)
                     self.bagState = BagState.Ground
                     completion(result: true)
 

@@ -208,10 +208,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
 //                    print("\(buttonA)")
                     if(buttonA.pressed == true && GameManager.gameManager.gameState == .Playing){
-//                        print("------------------")
-//                        print("")
+                        print("--------Throwing----------")
+                        print("")
                         self.isThrowing = true
                     } else if(buttonA.pressed == false && GameManager.gameManager.gameState == .Playing) {
+                        print("--------Finished Throwing----------")
+                        print("")
                         self.isThrowing = false
                         self.throwBag()
                     }
@@ -276,10 +278,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(isThrowing == true) {
             
            
-            let reading: MotionReading = MotionReading(gravityX: motion.gravity.x, gravityY: motion.gravity.y, gravityZ: motion.gravity.z, accelerationX: motion.userAcceleration.x, accelerationY: motion.userAcceleration.y, accelerationZ: motion.userAcceleration.z, quaternionW: motion.attitude.w, quaternionX: motion.attitude.x, quaternionY: motion.attitude.y, quaternionZ: motion.attitude.z)
+            let reading: MotionReading = MotionReading(gravityX: motion.gravity.x, gravityY: motion.gravity.y, gravityZ: motion.gravity.z, accelerationX: motion.userAcceleration.x, accelerationY: motion.userAcceleration.y, accelerationZ: motion.userAcceleration.z)
 //            print("")
 //            print("")
-
+//
 //            reading.printHeader()
 //            print(motion.gravity.x)
 //            print(motion.gravity.y)
@@ -287,10 +289,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            print(motion.userAcceleration.x)
 //            print(motion.userAcceleration.y)
 //            print(motion.userAcceleration.z)
-//            print(motion.attitude.w)
-//            print(motion.attitude.x)
-//            print(motion.attitude.y)
-//            print(motion.attitude.z)
+//
 //            reading.printReadingCSV()
 //            print("")
 //            print("")
@@ -326,8 +325,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var averageReading: MotionReading?
         
+        print("MOTION READINGS COUNT")
+        print(motionReadings.count)
         
-        if(motionReadings.count < 100){
+        if(motionReadings.count < 150){
+           
+            
             
             for reading in motionReadings {
                 gravityTotalX = gravityTotalX + reading.gravity.x
@@ -378,7 +381,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             accelerationAverageZ = (accelerationTotalZ / Double(motionReadings.count))
             
             
-            averageReading = MotionReading(gravityX: gravityAverageX, gravityY: gravityAverageY, gravityZ: gravityAverageZ, accelerationX: accelerationAverageX, accelerationY: accelerationAverageY, accelerationZ: accelerationAverageZ, quaternionW: 0.0, quaternionX: 0.0, quaternionY: 0.0, quaternionZ: 0.0)
+            averageReading = MotionReading(gravityX: gravityAverageX, gravityY: gravityAverageY, gravityZ: gravityAverageZ, accelerationX: accelerationAverageX, accelerationY: accelerationAverageY, accelerationZ: accelerationAverageZ)
             print("")
             print("")
             print("")
@@ -396,8 +399,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
-
+        
         if(lowGravityX != 100.0){
+            
             beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame))
 
         }

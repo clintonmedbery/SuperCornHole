@@ -12,13 +12,13 @@ class MotionReading {
     
     var gravity: Gravity
     var acceleration: Acceleration
-    var quaternion: Quaternion
+    //var quaternion: Quaternion
     
     
-    init(gravityX: Double, gravityY: Double, gravityZ: Double, accelerationX: Double, accelerationY: Double, accelerationZ: Double, quaternionW: Double, quaternionX: Double, quaternionY: Double, quaternionZ: Double){
+    init(gravityX: Double, gravityY: Double, gravityZ: Double, accelerationX: Double, accelerationY: Double, accelerationZ: Double){
         self.gravity = Gravity(gravityX: gravityX, gravityY: gravityY, gravityZ: gravityZ)
         self.acceleration = Acceleration(accelerationX: accelerationX, accelerationY: accelerationY, accelerationZ: accelerationZ)
-        self.quaternion = Quaternion(quaternionW: quaternionW, quaternionX: quaternionX, quaternionY: quaternionY, quaternionZ: quaternionZ)
+        //self.quaternion = Quaternion(quaternionW: quaternionW, quaternionX: quaternionX, quaternionY: quaternionY, quaternionZ: quaternionZ)
         
     }
     
@@ -40,7 +40,7 @@ class MotionReading {
     }
     
     func printReadingCSV(){
-        print("\(gravity.x),\(gravity.y),\(gravity.z),\(acceleration.x),\(acceleration.y),\(acceleration.z),\(quaternion.w),\(quaternion.x),\(quaternion.y),\(quaternion.z)")
+        print("\(gravity.x),\(gravity.y),\(gravity.z),\(acceleration.x),\(acceleration.y),\(acceleration.z)")
     }
     
     class Gravity {
@@ -69,17 +69,17 @@ class MotionReading {
         }
     }
     
-    class Quaternion {
-        var w: Double
-        var x: Double
-        var y: Double
-        var z: Double
-        
-        init(quaternionW: Double, quaternionX: Double, quaternionY: Double, quaternionZ: Double){
-            self.w = quaternionW
-            self.x = quaternionX
-            self.y = quaternionY
-            self.z = quaternionZ
-        }
-    }
+//    class Quaternion {
+//        var w: Double
+//        var x: Double
+//        var y: Double
+//        var z: Double
+//        
+//        init(quaternionW: Double, quaternionX: Double, quaternionY: Double, quaternionZ: Double){
+//            self.w = quaternionW
+//            self.x = quaternionX
+//            self.y = quaternionY
+//            self.z = quaternionZ
+//        }
+//    }
 }
