@@ -40,7 +40,7 @@ class BeanBag : SKSpriteNode{
     }
 
     
-    func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, completion: (result: Bool) -> Void) {
+    func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, horizonY: CGFloat, completion: (result: Bool) -> Void) {
         bagState = BagState.Air
         let landingY: CGFloat = impulseAmount * 1700.0
         

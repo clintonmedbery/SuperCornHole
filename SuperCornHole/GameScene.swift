@@ -328,7 +328,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("MOTION READINGS COUNT")
         print(motionReadings.count)
         
-        if(motionReadings.count < 150){
+        if(motionReadings.count < 200){
            
             
             
@@ -400,9 +400,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        if(lowGravityX != 100.0){
+        if(lowGravityX != 100.0 && averageReading!.gravity.y > 0){
+            let horizonY: CGFloat = CGRectGetMaxY(self.frame)
+            print(horizonY)
             
-            beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame))
+            beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame), horizonY: horizonY)
 
         }
         motionReadings.removeAll()
