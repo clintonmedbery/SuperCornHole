@@ -116,7 +116,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             name: GCControllerDidDisconnectNotification,
             object: nil)
         
-        print("Gravity X,Gravity Y,Gravity Z,Acceleration X,Acceleration Y,Acceleration Z,Quaternion W,Quaternion X,Quaternion Y,Quaternion Z")
+//        print("Gravity X,Gravity Y,Gravity Z,Acceleration X,Acceleration Y,Acceleration Z,Quaternion W,Quaternion X,Quaternion Y,Quaternion Z")
 
     }
     
@@ -208,12 +208,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
 //                    print("\(buttonA)")
                     if(buttonA.pressed == true && GameManager.gameManager.gameState == .Playing){
-                        print("--------Throwing----------")
-                        print("")
+//                        print("--------Throwing----------")
+//                        print("")
                         self.isThrowing = true
                     } else if(buttonA.pressed == false && GameManager.gameManager.gameState == .Playing) {
-                        print("--------Finished Throwing----------")
-                        print("")
+//                        print("--------Finished Throwing----------")
+//                        print("")
                         self.isThrowing = false
                         self.throwBag()
                     }
@@ -382,19 +382,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             
             averageReading = MotionReading(gravityX: gravityAverageX, gravityY: gravityAverageY, gravityZ: gravityAverageZ, accelerationX: accelerationAverageX, accelerationY: accelerationAverageY, accelerationZ: accelerationAverageZ)
-            print("")
-            print("")
-            print("")
-            print("Low Gravity X: \(lowGravityX)")
-            print("High Gravity X: \(highGravityX)")
-            print("Low Gravity Y: \(lowGravityY)")
-            print("High Gravity Y: \(highGravityY)")
-            print("Low Gravity Z: \(lowGravityZ)")
-            print("High Gravity Z: \(highGravityZ)")
-            averageReading?.printReading()
-            print("")
-            print("")
-            print("")
+//            print("")
+//            print("")
+//            print("")
+//            print("Low Gravity X: \(lowGravityX)")
+//            print("High Gravity X: \(highGravityX)")
+//            print("Low Gravity Y: \(lowGravityY)")
+//            print("High Gravity Y: \(highGravityY)")
+//            print("Low Gravity Z: \(lowGravityZ)")
+//            print("High Gravity Z: \(highGravityZ)")
+//            averageReading?.printReading()
+//            print("")
+//            print("")
+//            print("")
 
         }
         
@@ -402,7 +402,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(lowGravityX != 100.0 && averageReading!.gravity.y > 0){
             let horizonY: CGFloat = CGRectGetMaxY(self.frame)
-            print(horizonY)
+            
             
             beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame), horizonY: horizonY)
 

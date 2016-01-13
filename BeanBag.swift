@@ -43,7 +43,8 @@ class BeanBag : SKSpriteNode{
     func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, horizonY: CGFloat, completion: (result: Bool) -> Void) {
         bagState = BagState.Air
         let landingY: CGFloat = impulseAmount * 1700.0
-        
+        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.contactTestBitMask = 0
         
         let landingX: CGFloat = ((axisX + 0.02) * 165) + screenMidPoint
         print("")
@@ -57,28 +58,45 @@ class BeanBag : SKSpriteNode{
         moveAction.timingMode = .EaseOut
         scaleAction.timingMode = .EaseIn
         
+        let futureSize = CGFloat(((horizonY - point.y)/horizonY)/2)
+        print("-----------------------")
+        print("Y")
+        print(point.y)
+        print("")
+        print("HORIZON")
+        print(horizonY)
+        print("")
+        print("FUTURE SIZE")
+        print(futureSize)
+        print("-----------------------")
+        print("Collision Bit Mask")
+        print(self.physicsBody?.collisionBitMask)
+
         self.runAction(rotateAction)
         self.runAction(moveAction)
         self.runAction(scaleAction) { () -> Void in
-            let scaleBackAction: SKAction = SKAction.scaleBy(0.25, duration: 1.0)
+            let scaleBackAction: SKAction = SKAction.scaleBy(futureSize, duration: 1.0)
             scaleAction.timingMode = .EaseOut
             self.runAction(scaleBackAction) { () -> Void in
                 print(self.board?.checkForLanding(self))
                 if(self.board?.checkForLanding(self) == true) {
                     self.bagState = BagState.Board
                     let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + (impulseAmount * 150))
-                    
                     let slideAction:SKAction = SKAction.moveTo(point, duration: 0.25)
                     self.runAction(slideAction) { () -> Void in
                         print("Y POSITION")
                         print(self.position.y)
+                        print("X POSITION")
+                        print(self.position.x)
                         completion(result: true)
-
+                        
                     }
 
                 } else {
                     print("Y POSITION")
                     print(self.position.y)
+                    print("X POSITION")
+                    print(self.position.x)
                     self.bagState = BagState.Ground
                     completion(result: true)
 
