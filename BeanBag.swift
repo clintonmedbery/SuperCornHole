@@ -40,7 +40,7 @@ class BeanBag : SKSpriteNode{
     }
 
     
-    func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, horizonY: CGFloat, completion: (result: Bool) -> Void) {
+    func throwBag(impulseAmount: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, horizonY: CGFloat, rightSide: CGFloat, leftSide: CGFloat, maxY: CGFloat, completion: (result: Bool) -> Void) {
         bagState = BagState.Air
         let landingY: CGFloat = impulseAmount * 1700.0
         self.physicsBody?.collisionBitMask = 0
@@ -57,8 +57,14 @@ class BeanBag : SKSpriteNode{
         
         moveAction.timingMode = .EaseOut
         scaleAction.timingMode = .EaseIn
+        var sizeFactor: CGFloat?
+        if(point.x > rightSide && point.x < leftSide) {
+            sizeFactor = 2.4
+        } else {
+            sizeFactor = 2.0
+        }
         
-        let futureSize = CGFloat(((horizonY - point.y)/horizonY)/2)
+        let futureSize = CGFloat(((maxY - point.y)/maxY)/sizeFactor!)
         print("-----------------------")
         print("Y")
         print(point.y)
@@ -69,8 +75,8 @@ class BeanBag : SKSpriteNode{
         print("FUTURE SIZE")
         print(futureSize)
         print("-----------------------")
-        print("Collision Bit Mask")
-        print(self.physicsBody?.collisionBitMask)
+//        print("Collision Bit Mask")
+//        print(self.physicsBody?.collisionBitMask)
 
         self.runAction(rotateAction)
         self.runAction(moveAction)
@@ -78,7 +84,7 @@ class BeanBag : SKSpriteNode{
             let scaleBackAction: SKAction = SKAction.scaleBy(futureSize, duration: 1.0)
             scaleAction.timingMode = .EaseOut
             self.runAction(scaleBackAction) { () -> Void in
-                print(self.board?.checkForLanding(self))
+                //print(self.board?.checkForLanding(self))
                 if(self.board?.checkForLanding(self) == true) {
                     self.bagState = BagState.Board
                     let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + (impulseAmount * 150))
@@ -88,6 +94,11 @@ class BeanBag : SKSpriteNode{
                         print(self.position.y)
                         print("X POSITION")
                         print(self.position.x)
+                        if(point.y > horizonY && self.board?.checkForLanding(self) == false) {
+                            self.hidden = true
+                            self.bagState = BagState.Ground
+                            
+                        }
                         completion(result: true)
                         
                     }
@@ -98,6 +109,9 @@ class BeanBag : SKSpriteNode{
                     print("X POSITION")
                     print(self.position.x)
                     self.bagState = BagState.Ground
+                    if(point.y > horizonY && self.board?.checkForLanding(self) == false) {
+                        self.hidden = true
+                    }
                     completion(result: true)
 
                 }

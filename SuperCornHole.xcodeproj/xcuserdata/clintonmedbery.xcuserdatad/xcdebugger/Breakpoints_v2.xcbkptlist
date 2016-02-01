@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:completion:)"
+            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:rightSide:leftSide:maxY:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SuperCornHole/GameScene.swift"
-            timestampString = "470724176.410251"
+            timestampString = "474434536.581032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SuperCornHole/GameScene.swift"
-            timestampString = "470724176.410251"
+            timestampString = "474434536.581032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "update(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -111,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:)"
+            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:rightSide:leftSide:maxY:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -127,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:)"
+            landmarkName = "throwBag(_:axisX:screenMidPoint:horizonY:rightSide:leftSide:maxY:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SuperCornHole/GameScene.swift"
-            timestampString = "473736306.596525"
+            timestampString = "474434536.581032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "gameControllerDidConnect(_:)"
             landmarkType = "5">
             <Locations>

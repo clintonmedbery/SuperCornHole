@@ -30,6 +30,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var blueScoreLabel: SKLabelNode?
     var redScoreLabel: SKLabelNode?
+    
+    var rightSide: CGFloat?
+    var leftSide :CGFloat?
+    
 
     
     var gamePad: GCMicroGamepad? = nil
@@ -81,7 +85,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         GameManager.gameManager.gameState = .NotReady
         cornholeBoard = CornholeBoard(spriteTextureName: "cornholeFrontReg", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 125, width: 256, height: 320)
+        rightSide = self.frame.midX - cornholeBoard!.size.width/2
+        leftSide = self.frame.midX - cornholeBoard!.size.width/2
+        print("RIGHT SIDE")
+        print(rightSide)
+        print("LEFT SIDE")
+
+        print(leftSide)
+
         
+
         addChild(cornholeBoard!)
         
         hole = Hole(spriteTextureName: "hole", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 235, width: 64, height: 64)
@@ -401,10 +414,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         if(lowGravityX != 100.0 && averageReading!.gravity.y > 0){
-            let horizonY: CGFloat = CGRectGetMaxY(self.frame)
+            let maxY: CGFloat = CGRectGetMaxY(self.frame)
+            let horizonY = (12/17) * self.frame.height
             
-            
-            beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame), horizonY: horizonY)
+            beanBagHandler?.throwBag(CGFloat(averageReading!.gravity.y), axisX: CGFloat(averageReading!.acceleration.x), screenMidPoint: CGRectGetMidX(self.frame), horizonY: horizonY, rightSide: rightSide!, leftSide: leftSide!, maxY: maxY)
 
         }
         motionReadings.removeAll()
