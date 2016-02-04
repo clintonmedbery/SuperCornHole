@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameController
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -128,6 +129,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             selector: Selector("gameControllerDidDisconnect:"),
             name: GCControllerDidDisconnectNotification,
             object: nil)
+        AudioManager.audioManager.introSound?.play()
+        
+
+
         
 //        print("Gravity X,Gravity Y,Gravity Z,Acceleration X,Acceleration Y,Acceleration Z,Quaternion W,Quaternion X,Quaternion Y,Quaternion Z")
 
@@ -152,14 +157,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         blueScoreLabel!.text = String(GameManager.gameManager.blueTeamScore)
         
         for bag in (beanBagHandler?.blueBags)!{
-            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag) == true){
+            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air && bag.bagState != BagState.InHole && hole?.checkForLanding(bag) == true){
                 bag.makeBagFall()
+                sleep(1)
             }
         }
         
         for bag in (beanBagHandler?.redBags)!{
-            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air  && hole?.checkForLanding(bag) == true){
+            if(bag.bagState != BagState.Ground  && bag.bagState != BagState.Air && bag.bagState != BagState.InHole && hole?.checkForLanding(bag) == true){
                 bag.makeBagFall()
+                sleep(1)
             }
         }
         
@@ -246,6 +253,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             self.pauseTint?.hidden = false
                             //self.view!.paused = true
                             GameManager.gameManager.gameState = GameState.Paused
+                            AudioManager.audioManager.pauseBackground()
+
                             
                         } else if(GameManager.gameManager.gameState == .Paused) {
                             print("UNPAUSED")
@@ -253,6 +262,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             //self.view!.paused = false
                             
                             GameManager.gameManager.gameState = GameState.Playing
+                            AudioManager.audioManager.playBackground()
+
 
 
                         }
@@ -262,6 +273,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.readyLabel?.hidden = true
                         self.pauseTint?.hidden = true
                         GameManager.gameManager.gameState = .Playing
+                        AudioManager.audioManager.playBackground()
 
                     }
                     

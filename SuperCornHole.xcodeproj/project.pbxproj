@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8811D8EE1BE6F18900D08FFA /* BeanBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811D8ED1BE6F18900D08FFA /* BeanBag.swift */; };
+		88432B191C629866002DDD9D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88432B181C629866002DDD9D /* AudioManager.swift */; };
+		88432B1C1C62A1D5002DDD9D /* RoboCornhole.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88432B1B1C62A1D5002DDD9D /* RoboCornhole.wav */; };
+		88432B1E1C62ABA1002DDD9D /* natureBackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88432B1D1C62ABA1002DDD9D /* natureBackground.mp3 */; };
+		88432B221C62B9F7002DDD9D /* board1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88432B211C62B9F7002DDD9D /* board1.wav */; };
+		88432B241C62BB6A002DDD9D /* board2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88432B231C62BB6A002DDD9D /* board2.wav */; };
+		88432B261C62BB98002DDD9D /* board3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88432B251C62BB98002DDD9D /* board3.wav */; };
+		88432B291C62FB1A002DDD9D /* Clap1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88432B281C62FB1A002DDD9D /* Clap1.mp3 */; };
 		8864FD851BE874A000A66EEA /* BeanBagHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD841BE874A000A66EEA /* BeanBagHandler.swift */; };
 		8864FD871BE96C7800A66EEA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD861BE96C7800A66EEA /* GameManager.swift */; };
 		8864FD891BEA668500A66EEA /* BackgroundTiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD881BEA668500A66EEA /* BackgroundTiler.swift */; };
@@ -47,6 +54,13 @@
 
 /* Begin PBXFileReference section */
 		8811D8ED1BE6F18900D08FFA /* BeanBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanBag.swift; sourceTree = "<group>"; };
+		88432B181C629866002DDD9D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		88432B1B1C62A1D5002DDD9D /* RoboCornhole.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RoboCornhole.wav; sourceTree = "<group>"; };
+		88432B1D1C62ABA1002DDD9D /* natureBackground.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = natureBackground.mp3; sourceTree = "<group>"; };
+		88432B211C62B9F7002DDD9D /* board1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = board1.wav; sourceTree = "<group>"; };
+		88432B231C62BB6A002DDD9D /* board2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = board2.wav; sourceTree = "<group>"; };
+		88432B251C62BB98002DDD9D /* board3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = board3.wav; sourceTree = "<group>"; };
+		88432B281C62FB1A002DDD9D /* Clap1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clap1.mp3; sourceTree = "<group>"; };
 		8864FD841BE874A000A66EEA /* BeanBagHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanBagHandler.swift; sourceTree = "<group>"; };
 		8864FD861BE96C7800A66EEA /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		8864FD881BEA668500A66EEA /* BackgroundTiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTiler.swift; sourceTree = "<group>"; };
@@ -98,9 +112,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88432B1A1C62A1C2002DDD9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88432B251C62BB98002DDD9D /* board3.wav */,
+				88432B281C62FB1A002DDD9D /* Clap1.mp3 */,
+				88432B211C62B9F7002DDD9D /* board1.wav */,
+				88432B231C62BB6A002DDD9D /* board2.wav */,
+				88432B1D1C62ABA1002DDD9D /* natureBackground.mp3 */,
+				88432B1B1C62A1D5002DDD9D /* RoboCornhole.wav */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		88DEB84F1BE669B2000A4765 = {
 			isa = PBXGroup;
 			children = (
+				88432B1A1C62A1C2002DDD9D /* Resources */,
+				88432B181C629866002DDD9D /* AudioManager.swift */,
 				888746251C0E92F10095E9F2 /* MotionReading.swift */,
 				8864FD951BEB491800A66EEA /* Bucket.swift */,
 				8864FD931BEB400500A66EEA /* Hole.swift */,
@@ -266,10 +295,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88432B241C62BB6A002DDD9D /* board2.wav in Resources */,
 				88DEB8671BE669B2000A4765 /* Main.storyboard in Resources */,
+				88432B1E1C62ABA1002DDD9D /* natureBackground.mp3 in Resources */,
 				88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */,
+				88432B291C62FB1A002DDD9D /* Clap1.mp3 in Resources */,
+				88432B1C1C62A1D5002DDD9D /* RoboCornhole.wav in Resources */,
+				88432B261C62BB98002DDD9D /* board3.wav in Resources */,
 				88DEB8691BE669B2000A4765 /* Assets.xcassets in Resources */,
 				88DEB8641BE669B2000A4765 /* Game.xcassets in Resources */,
+				88432B221C62B9F7002DDD9D /* board1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +337,7 @@
 				88DEB8601BE669B2000A4765 /* GameScene.swift in Sources */,
 				88DEB8621BE669B2000A4765 /* GameViewController.swift in Sources */,
 				8864FD901BEA8D3500A66EEA /* Tile.swift in Sources */,
+				88432B191C629866002DDD9D /* AudioManager.swift in Sources */,
 				8864FD851BE874A000A66EEA /* BeanBagHandler.swift in Sources */,
 				8864FD961BEB491800A66EEA /* Bucket.swift in Sources */,
 				88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */,

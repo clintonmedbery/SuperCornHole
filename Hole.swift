@@ -19,7 +19,7 @@ class Hole: SKSpriteNode {
         
         
         let body: SKPhysicsBody = SKPhysicsBody(texture: imageTexture, size: spriteSize)
-        //self.physicsBody = body
+//        self.physicsBody = body
         
         body.dynamic = true
         body.categoryBitMask = PhysicsCategory.Board

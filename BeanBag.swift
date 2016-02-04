@@ -86,6 +86,7 @@ class BeanBag : SKSpriteNode{
             self.runAction(scaleBackAction) { () -> Void in
                 //print(self.board?.checkForLanding(self))
                 if(self.board?.checkForLanding(self) == true) {
+                    AudioManager.audioManager.playRandomBoard()
                     self.bagState = BagState.Board
                     let point: CGPoint = CGPoint(x: self.position.x, y: self.position.y + (impulseAmount * 150))
                     let slideAction:SKAction = SKAction.moveTo(point, duration: 0.25)
@@ -132,6 +133,7 @@ class BeanBag : SKSpriteNode{
         self.setScale(0)
         bagState = .InHole
         GameManager.gameManager.gameState = .Playing
+        AudioManager.audioManager.playClaps()
     }
     
 }
