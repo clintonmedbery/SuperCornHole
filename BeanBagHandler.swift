@@ -27,14 +27,17 @@ class BeanBagHandler {
     
     let FINAL_SCORE: Int = 21
     
-    var defaultBlueXPosition : CGFloat = 800
-    var defaultRedXPosition : CGFloat = 1120
+    var defaultBlueXPosition: CGFloat?
+    var defaultRedXPosition : CGFloat?
     
     var board: CornholeBoard?
     
 
     
-    init(cornholeBoard: CornholeBoard){
+    init(cornholeBoard: CornholeBoard, defaultBlueXPos: CGFloat, defaultRedXPos: CGFloat){
+        defaultRedXPosition = defaultRedXPos
+        defaultBlueXPosition = defaultBlueXPos
+
         board = cornholeBoard
         reset()
         placeCurrentBeanBag()
@@ -67,25 +70,25 @@ class BeanBagHandler {
     }
     
     func placeCurrentBeanBag() {
-        currentBeanBag?.placeBeanBagAtStart()
+        currentBeanBag?.placeBeanBagAtStart(defaultBlueXPosition!, defaultRedXPos: defaultRedXPosition!)
         currentBeanBag?.zPosition = CGFloat(BOTTOM_LAYER + beanBagLayer!)
 
     }
     
     func resetBags(){
         blueBags.removeAll()
-        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition, yPos: 275, width: 32, height: 32))
-        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition, yPos: 225 , width: 32, height: 32))
-        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition, yPos: 175, width: 32, height: 32))
-        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition, yPos: 125, width: 32, height: 32))
-        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition, yPos: 75, width: 32, height: 32))
+        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition!, yPos: 275, width: 32, height: 32))
+        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition!, yPos: 225 , width: 32, height: 32))
+        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition!, yPos: 175, width: 32, height: 32))
+        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition!, yPos: 125, width: 32, height: 32))
+        blueBags.append(BeanBag(spriteTextureName: "BlueBag", cornholeBoard: board!, xPos: defaultBlueXPosition!, yPos: 75, width: 32, height: 32))
         
         redBags.removeAll()
-        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 275, width: 32, height: 32))
-        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 225 , width: 32, height: 32))
-        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 175, width: 32, height: 32))
-        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 125, width: 32, height: 32))
-        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition, yPos: 75, width: 32, height: 32))
+        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition!, yPos: 275, width: 32, height: 32))
+        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition!, yPos: 225 , width: 32, height: 32))
+        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition!, yPos: 175, width: 32, height: 32))
+        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition!, yPos: 125, width: 32, height: 32))
+        redBags.append(BeanBag(spriteTextureName: "RedBag", cornholeBoard: board!, xPos: defaultRedXPosition!, yPos: 75, width: 32, height: 32))
     }
     
     func throwBag(tossPower: CGFloat, axisX: CGFloat, screenMidPoint: CGFloat, horizonY: CGFloat, rightSide: CGFloat, leftSide: CGFloat, maxY: CGFloat) {
@@ -101,7 +104,7 @@ class BeanBagHandler {
                     if(self.redThrowsLeft >= 1){
                         self.currentBeanBag = self.redBags[self.currentRed!]
                     }
-                    self.currentBeanBag?.placeBeanBagAtStart()
+                    self.currentBeanBag?.placeBeanBagAtStart(self.defaultBlueXPosition!, defaultRedXPos:self.defaultRedXPosition!)
                     self.currentBeanBag?.zPosition = CGFloat(self.BOTTOM_LAYER + self.beanBagLayer!)
                     
                     self.beanBagLayer = self.beanBagLayer! + 1
@@ -117,7 +120,7 @@ class BeanBagHandler {
                     self.currentBeanBag?.zPosition = CGFloat(self.BOTTOM_LAYER + self.beanBagLayer!)
                     self.beanBagLayer = self.beanBagLayer! + 1
                     
-                    self.currentBeanBag?.placeBeanBagAtStart()
+                    self.currentBeanBag?.placeBeanBagAtStart(self.defaultBlueXPosition!, defaultRedXPos: self.defaultRedXPosition!)
                     GameManager.gameManager.currentTeam = CurrentTeam.BlueTeam
                 }
 

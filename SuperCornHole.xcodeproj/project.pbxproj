@@ -16,6 +16,26 @@
 		8864FD921BEB271E00A66EEA /* CornholeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD911BEB271E00A66EEA /* CornholeBoard.swift */; };
 		8864FD941BEB400500A66EEA /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD931BEB400500A66EEA /* Hole.swift */; };
 		8864FD961BEB491800A66EEA /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD951BEB491800A66EEA /* Bucket.swift */; };
+		887FA2B61CAB82770036CCE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FA2B51CAB82770036CCE1 /* AppDelegate.swift */; };
+		887FA2B81CAB82770036CCE1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 887FA2B71CAB82770036CCE1 /* GameScene.sks */; };
+		887FA2BA1CAB82770036CCE1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FA2B91CAB82770036CCE1 /* GameScene.swift */; };
+		887FA2BC1CAB82770036CCE1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FA2BB1CAB82770036CCE1 /* GameViewController.swift */; };
+		887FA2BF1CAB82770036CCE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887FA2BD1CAB82770036CCE1 /* Main.storyboard */; };
+		887FA2C11CAB82770036CCE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887FA2C01CAB82770036CCE1 /* Assets.xcassets */; };
+		887FA2C41CAB82770036CCE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887FA2C21CAB82770036CCE1 /* LaunchScreen.storyboard */; };
+		887FA2CF1CAB82780036CCE1 /* SuperCornholeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FA2CE1CAB82780036CCE1 /* SuperCornholeiOSTests.swift */; };
+		887FA2DA1CAB82780036CCE1 /* SuperCornholeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FA2D91CAB82780036CCE1 /* SuperCornholeiOSUITests.swift */; };
+		887FA2E51CAB8C180036CCE1 /* MotionReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888746251C0E92F10095E9F2 /* MotionReading.swift */; };
+		887FA2E61CAB8C240036CCE1 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD951BEB491800A66EEA /* Bucket.swift */; };
+		887FA2E71CAB8C2B0036CCE1 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD931BEB400500A66EEA /* Hole.swift */; };
+		887FA2E81CAB8C2F0036CCE1 /* CornholeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD911BEB271E00A66EEA /* CornholeBoard.swift */; };
+		887FA2E91CAB8C320036CCE1 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD8F1BEA8D3500A66EEA /* Tile.swift */; };
+		887FA2EA1CAB8C360036CCE1 /* BackgroundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD8D1BEA803B00A66EEA /* BackgroundData.swift */; };
+		887FA2EB1CAB8C390036CCE1 /* BackgroundTiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD881BEA668500A66EEA /* BackgroundTiler.swift */; };
+		887FA2EC1CAB8C3C0036CCE1 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD861BE96C7800A66EEA /* GameManager.swift */; };
+		887FA2ED1CAB8C400036CCE1 /* BeanBagHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864FD841BE874A000A66EEA /* BeanBagHandler.swift */; };
+		887FA2EE1CAB8C450036CCE1 /* BeanBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811D8ED1BE6F18900D08FFA /* BeanBag.swift */; };
+		887FA2F21CAB8FCA0036CCE1 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887FA2F11CAB8FCA0036CCE1 /* Game.xcassets */; };
 		888746261C0E92F10095E9F2 /* MotionReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888746251C0E92F10095E9F2 /* MotionReading.swift */; };
 		88DEB85C1BE669B2000A4765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEB85B1BE669B2000A4765 /* AppDelegate.swift */; };
 		88DEB85E1BE669B2000A4765 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 88DEB85D1BE669B2000A4765 /* GameScene.sks */; };
@@ -29,6 +49,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		887FA2CB1CAB82780036CCE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88DEB8501BE669B2000A4765 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887FA2B21CAB82730036CCE1;
+			remoteInfo = SuperCornholeiOS;
+		};
+		887FA2D61CAB82780036CCE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88DEB8501BE669B2000A4765 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887FA2B21CAB82730036CCE1;
+			remoteInfo = SuperCornholeiOS;
+		};
 		88DEB8701BE669B2000A4765 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88DEB8501BE669B2000A4765 /* Project object */;
@@ -55,6 +89,22 @@
 		8864FD911BEB271E00A66EEA /* CornholeBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornholeBoard.swift; sourceTree = "<group>"; };
 		8864FD931BEB400500A66EEA /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		8864FD951BEB491800A66EEA /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		887FA2B31CAB82730036CCE1 /* SuperCornholeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCornholeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		887FA2B51CAB82770036CCE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		887FA2B71CAB82770036CCE1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		887FA2B91CAB82770036CCE1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		887FA2BB1CAB82770036CCE1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		887FA2BE1CAB82770036CCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		887FA2C01CAB82770036CCE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		887FA2C31CAB82770036CCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		887FA2C51CAB82770036CCE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887FA2CA1CAB82780036CCE1 /* SuperCornholeiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCornholeiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		887FA2CE1CAB82780036CCE1 /* SuperCornholeiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCornholeiOSTests.swift; sourceTree = "<group>"; };
+		887FA2D01CAB82780036CCE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887FA2D51CAB82780036CCE1 /* SuperCornholeiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCornholeiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		887FA2D91CAB82780036CCE1 /* SuperCornholeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCornholeiOSUITests.swift; sourceTree = "<group>"; };
+		887FA2DB1CAB82780036CCE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887FA2F11CAB8FCA0036CCE1 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
 		888746251C0E92F10095E9F2 /* MotionReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionReading.swift; sourceTree = "<group>"; };
 		88DEB8581BE669B2000A4765 /* SuperCornHole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCornHole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DEB85B1BE669B2000A4765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +124,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		887FA2B01CAB82730036CCE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2C71CAB82780036CCE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2D21CAB82780036CCE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88DEB8551BE669B2000A4765 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +169,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		887FA2B41CAB82770036CCE1 /* SuperCornholeiOS */ = {
+			isa = PBXGroup;
+			children = (
+				887FA2B51CAB82770036CCE1 /* AppDelegate.swift */,
+				887FA2F11CAB8FCA0036CCE1 /* Game.xcassets */,
+				887FA2B71CAB82770036CCE1 /* GameScene.sks */,
+				887FA2B91CAB82770036CCE1 /* GameScene.swift */,
+				887FA2BB1CAB82770036CCE1 /* GameViewController.swift */,
+				887FA2BD1CAB82770036CCE1 /* Main.storyboard */,
+				887FA2C01CAB82770036CCE1 /* Assets.xcassets */,
+				887FA2C21CAB82770036CCE1 /* LaunchScreen.storyboard */,
+				887FA2C51CAB82770036CCE1 /* Info.plist */,
+			);
+			path = SuperCornholeiOS;
+			sourceTree = "<group>";
+		};
+		887FA2CD1CAB82780036CCE1 /* SuperCornholeiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				887FA2CE1CAB82780036CCE1 /* SuperCornholeiOSTests.swift */,
+				887FA2D01CAB82780036CCE1 /* Info.plist */,
+			);
+			path = SuperCornholeiOSTests;
+			sourceTree = "<group>";
+		};
+		887FA2D81CAB82780036CCE1 /* SuperCornholeiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				887FA2D91CAB82780036CCE1 /* SuperCornholeiOSUITests.swift */,
+				887FA2DB1CAB82780036CCE1 /* Info.plist */,
+			);
+			path = SuperCornholeiOSUITests;
+			sourceTree = "<group>";
+		};
 		88DEB84F1BE669B2000A4765 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +219,9 @@
 				88DEB85A1BE669B2000A4765 /* SuperCornHole */,
 				88DEB8721BE669B2000A4765 /* SuperCornHoleTests */,
 				88DEB87D1BE669B2000A4765 /* SuperCornHoleUITests */,
+				887FA2B41CAB82770036CCE1 /* SuperCornholeiOS */,
+				887FA2CD1CAB82780036CCE1 /* SuperCornholeiOSTests */,
+				887FA2D81CAB82780036CCE1 /* SuperCornholeiOSUITests */,
 				88DEB8591BE669B2000A4765 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +232,9 @@
 				88DEB8581BE669B2000A4765 /* SuperCornHole.app */,
 				88DEB86F1BE669B2000A4765 /* SuperCornHoleTests.xctest */,
 				88DEB87A1BE669B2000A4765 /* SuperCornHoleUITests.xctest */,
+				887FA2B31CAB82730036CCE1 /* SuperCornholeiOS.app */,
+				887FA2CA1CAB82780036CCE1 /* SuperCornholeiOSTests.xctest */,
+				887FA2D51CAB82780036CCE1 /* SuperCornholeiOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +275,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		887FA2B21CAB82730036CCE1 /* SuperCornholeiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887FA2E21CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOS" */;
+			buildPhases = (
+				887FA2AF1CAB82730036CCE1 /* Sources */,
+				887FA2B01CAB82730036CCE1 /* Frameworks */,
+				887FA2B11CAB82730036CCE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperCornholeiOS;
+			productName = SuperCornholeiOS;
+			productReference = 887FA2B31CAB82730036CCE1 /* SuperCornholeiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		887FA2C91CAB82780036CCE1 /* SuperCornholeiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887FA2E31CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOSTests" */;
+			buildPhases = (
+				887FA2C61CAB82780036CCE1 /* Sources */,
+				887FA2C71CAB82780036CCE1 /* Frameworks */,
+				887FA2C81CAB82780036CCE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				887FA2CC1CAB82780036CCE1 /* PBXTargetDependency */,
+			);
+			name = SuperCornholeiOSTests;
+			productName = SuperCornholeiOSTests;
+			productReference = 887FA2CA1CAB82780036CCE1 /* SuperCornholeiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		887FA2D41CAB82780036CCE1 /* SuperCornholeiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887FA2E41CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOSUITests" */;
+			buildPhases = (
+				887FA2D11CAB82780036CCE1 /* Sources */,
+				887FA2D21CAB82780036CCE1 /* Frameworks */,
+				887FA2D31CAB82780036CCE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				887FA2D71CAB82780036CCE1 /* PBXTargetDependency */,
+			);
+			name = SuperCornholeiOSUITests;
+			productName = SuperCornholeiOSUITests;
+			productReference = 887FA2D51CAB82780036CCE1 /* SuperCornholeiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		88DEB8571BE669B2000A4765 /* SuperCornHole */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88DEB8831BE669B2000A4765 /* Build configuration list for PBXNativeTarget "SuperCornHole" */;
@@ -223,10 +387,21 @@
 		88DEB8501BE669B2000A4765 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Programadores Sans Frontieres";
 				TargetAttributes = {
+					887FA2B21CAB82730036CCE1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					887FA2C91CAB82780036CCE1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 887FA2B21CAB82730036CCE1;
+					};
+					887FA2D41CAB82780036CCE1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 887FA2B21CAB82730036CCE1;
+					};
 					88DEB8571BE669B2000A4765 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = VT2BD2ZS22;
@@ -257,11 +432,40 @@
 				88DEB8571BE669B2000A4765 /* SuperCornHole */,
 				88DEB86E1BE669B2000A4765 /* SuperCornHoleTests */,
 				88DEB8791BE669B2000A4765 /* SuperCornHoleUITests */,
+				887FA2B21CAB82730036CCE1 /* SuperCornholeiOS */,
+				887FA2C91CAB82780036CCE1 /* SuperCornholeiOSTests */,
+				887FA2D41CAB82780036CCE1 /* SuperCornholeiOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		887FA2B11CAB82730036CCE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887FA2B81CAB82770036CCE1 /* GameScene.sks in Resources */,
+				887FA2C41CAB82770036CCE1 /* LaunchScreen.storyboard in Resources */,
+				887FA2C11CAB82770036CCE1 /* Assets.xcassets in Resources */,
+				887FA2F21CAB8FCA0036CCE1 /* Game.xcassets in Resources */,
+				887FA2BF1CAB82770036CCE1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2C81CAB82780036CCE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2D31CAB82780036CCE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88DEB8561BE669B2000A4765 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +494,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		887FA2AF1CAB82730036CCE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887FA2EA1CAB8C360036CCE1 /* BackgroundData.swift in Sources */,
+				887FA2E81CAB8C2F0036CCE1 /* CornholeBoard.swift in Sources */,
+				887FA2BA1CAB82770036CCE1 /* GameScene.swift in Sources */,
+				887FA2EC1CAB8C3C0036CCE1 /* GameManager.swift in Sources */,
+				887FA2E71CAB8C2B0036CCE1 /* Hole.swift in Sources */,
+				887FA2ED1CAB8C400036CCE1 /* BeanBagHandler.swift in Sources */,
+				887FA2EB1CAB8C390036CCE1 /* BackgroundTiler.swift in Sources */,
+				887FA2E91CAB8C320036CCE1 /* Tile.swift in Sources */,
+				887FA2BC1CAB82770036CCE1 /* GameViewController.swift in Sources */,
+				887FA2E51CAB8C180036CCE1 /* MotionReading.swift in Sources */,
+				887FA2E61CAB8C240036CCE1 /* Bucket.swift in Sources */,
+				887FA2EE1CAB8C450036CCE1 /* BeanBag.swift in Sources */,
+				887FA2B61CAB82770036CCE1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2C61CAB82780036CCE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887FA2CF1CAB82780036CCE1 /* SuperCornholeiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887FA2D11CAB82780036CCE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887FA2DA1CAB82780036CCE1 /* SuperCornholeiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88DEB8541BE669B2000A4765 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,6 +569,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		887FA2CC1CAB82780036CCE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 887FA2B21CAB82730036CCE1 /* SuperCornholeiOS */;
+			targetProxy = 887FA2CB1CAB82780036CCE1 /* PBXContainerItemProxy */;
+		};
+		887FA2D71CAB82780036CCE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 887FA2B21CAB82730036CCE1 /* SuperCornholeiOS */;
+			targetProxy = 887FA2D61CAB82780036CCE1 /* PBXContainerItemProxy */;
+		};
 		88DEB8711BE669B2000A4765 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88DEB8571BE669B2000A4765 /* SuperCornHole */;
@@ -342,6 +592,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		887FA2BD1CAB82770036CCE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				887FA2BE1CAB82770036CCE1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		887FA2C21CAB82770036CCE1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				887FA2C31CAB82770036CCE1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		88DEB8651BE669B2000A4765 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -353,6 +619,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		887FA2DC1CAB82780036CCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SuperCornholeiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		887FA2DD1CAB82780036CCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SuperCornholeiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		887FA2DE1CAB82780036CCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SuperCornholeiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCornholeiOS.app/SuperCornholeiOS";
+			};
+			name = Debug;
+		};
+		887FA2DF1CAB82780036CCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SuperCornholeiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCornholeiOS.app/SuperCornholeiOS";
+			};
+			name = Release;
+		};
+		887FA2E01CAB82780036CCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SuperCornholeiOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = SuperCornholeiOS;
+			};
+			name = Debug;
+		};
+		887FA2E11CAB82780036CCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SuperCornholeiOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FTPA.SuperCornholeiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = SuperCornholeiOS;
+			};
+			name = Release;
+		};
 		88DEB8811BE669B2000A4765 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -517,6 +879,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		887FA2E21CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887FA2DC1CAB82780036CCE1 /* Debug */,
+				887FA2DD1CAB82780036CCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		887FA2E31CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887FA2DE1CAB82780036CCE1 /* Debug */,
+				887FA2DF1CAB82780036CCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		887FA2E41CAB82780036CCE1 /* Build configuration list for PBXNativeTarget "SuperCornholeiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887FA2E01CAB82780036CCE1 /* Debug */,
+				887FA2E11CAB82780036CCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		88DEB8531BE669B2000A4765 /* Build configuration list for PBXProject "SuperCornHole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

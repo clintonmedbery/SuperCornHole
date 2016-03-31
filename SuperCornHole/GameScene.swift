@@ -49,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         readyLabel = SKLabelNode(fontNamed:"Menlo")
         GameManager.gameManager.gameMessage = "Press Play to Start!"
         readyLabel!.text = GameManager.gameManager.gameMessage;
-        readyLabel!.fontSize = 65;
+        readyLabel!.fontSize = 25;
         readyLabel!.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         readyLabel!.zPosition = 30
         
@@ -99,7 +99,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         hole = Hole(spriteTextureName: "hole", xPos: UIScreen.mainScreen().bounds.width/2, yPos: (UIScreen.mainScreen().bounds.height/2) + 235, width: 64, height: 64)
         addChild(hole!)
-        backgroundTiler = BackgroundTiler(name: "yard", tileSize: 64)
+        backgroundTiler = BackgroundTiler(name: "yard", tileSize: 16)
         for tile in backgroundTiler!.tiles{
             tile.zPosition = -1
             addChild(tile)
@@ -136,10 +136,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
-//        for touch in touches {
-//            let location = touch.locationInNode(self)
-//            
-//            }
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            if(GameManager.gameManager.gameState == .Paused) {
+                print("UNPAUSED")
+                self.pauseTint?.hidden = true
+                //self.view!.paused = false
+                
+                GameManager.gameManager.gameState = GameState.Playing
+                
+                
+            }
+            
+            }
         
         
     }

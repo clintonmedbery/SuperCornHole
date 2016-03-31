@@ -9,9 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SuperCornholeiOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>887FA2B21CAB82730036CCE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>887FA2C91CAB82780036CCE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>887FA2D41CAB82780036CCE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88DEB8571BE669B2000A4765</key>
 		<dict>
 			<key>primary</key>

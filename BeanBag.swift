@@ -122,10 +122,15 @@ class BeanBag : SKSpriteNode{
         
     }
     
-    func placeBeanBagAtStart(){
-        self.position.y = 16
-        self.position.x = 950
-        self.setScale(2)
+    func placeBeanBagAtStart(defaultBlueXPos: CGFloat, defaultRedXPos: CGFloat){
+        self.position.y = 32
+        self.position.x = defaultRedXPos - defaultBlueXPos + 100
+        print()
+        print("PLACING AT START")
+        print(defaultRedXPos)
+        print(defaultBlueXPos)
+        print(self.position)
+        self.setScale(1.5)
     }
     
     func makeBagFall(){
